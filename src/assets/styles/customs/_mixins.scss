@@ -1,5 +1,23 @@
 /* .s = Set */
 
+// for grid styling
+@mixin col-grid($min, $max){
+	@for $i from $min to $max+1{
+		.col-#{$i}{
+			width: percentage($i/$max);
+			float: left;
+			display: inline-block;
+		}
+	}
+}
+
+.row{
+	margin-left: -15px;
+	margin-right: -15px;
+}
+
+@include col-grid(1, 12);
+
 // for margin Styling
 @mixin margin-padding($min, $max){
 	@for $i from $min to $max+1{
@@ -107,8 +125,12 @@ $display-value : block, inline, inline-block, flex, inline-flex, table, table-ce
   }
 }
 
-.clearfix{
-	clear: both;
+.s-clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
 }
 
 .s-float-l{
