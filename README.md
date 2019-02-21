@@ -7,7 +7,6 @@ This page are use to cashier page
 ## Text Editor Configuration : 
 ```
 1. Using Tab and Tab size : 2
-2. Didn't use semicolon
 ```
 
 ## To Seting output of production build
