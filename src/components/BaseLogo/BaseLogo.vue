@@ -4,7 +4,7 @@
 export default {
 	name: 'BaseLogo',
 	props: {
-		logoHeight: {
+		logoWidth: {
 			type: Number
 		},
 	}
