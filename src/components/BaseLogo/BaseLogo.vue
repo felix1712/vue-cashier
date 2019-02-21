@@ -5,10 +5,10 @@ export default {
 	name: 'BaseLogo',
 	props: {
 		logoWidth: {
-			type: Number
+			type: Number,
 		},
-	}
-}
+	},
+};
 </script>
 
 <style lang="scss" scoped>
