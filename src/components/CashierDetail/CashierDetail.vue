@@ -1,7 +1,7 @@
 <template src="./index.html"></template>
 
 <script>
-	export default {
-		name: 'CashierDetail',
-	}
+export default {
+	name: 'CashierDetail',
+};
 </script>

@@ -3,7 +3,7 @@
 <script>
 export default {
 	name: 'BaseCardFrame',
-}
+};
 </script>
 
 <style lang="scss" scoped>
@@ -44,7 +44,7 @@ export default {
 
 			.logo-gateway{
 				text-align: center;
-				
+
 				img{
 					width: 100px;
 					height: auto;
