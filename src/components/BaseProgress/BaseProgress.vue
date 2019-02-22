@@ -10,3 +10,9 @@ export default {
 	},
 };
 </script>
+
+<style lang="scss" scoped>
+	#progressBar{
+		border-bottom: 1px solid #F5F5F5;
+	}
+</style>

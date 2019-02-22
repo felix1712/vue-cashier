@@ -12,3 +12,10 @@ export default {
 	},
 };
 </script>
+
+<style lang="scss" scoped>
+	#cashierPayment{
+		background: #fff;
+		box-shadow: 8px 0 10px 0px #EBEBEB
+	}
+</style>
