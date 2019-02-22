@@ -1,7 +1,7 @@
 <template src="./index.html"></template>
 
 <script>
-export default{
+export default {
 	name: 'ProgressTitle',
 	props: {
 		title: {
@@ -10,7 +10,7 @@ export default{
 		},
 		color: {
 			type: String,
-		}
+		},
 	},
 };
 </script>
@@ -19,7 +19,6 @@ export default{
 	#progressTitle{
 		span{
 			margin-right: 10px;
-			
 			img{
 				width: 35px;
 				height: auto;
