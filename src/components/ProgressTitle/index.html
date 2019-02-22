@@ -1,0 +1,9 @@
+<div id="progressTitle">
+	<p class="s-cl-g" :class="{'s-cl-r' : color == 'red'}">
+		<span>
+			<img v-if="color != 'red'" src="@/assets/images/icon/check-icon.png" />
+			<img v-if="color == 'red'" src="@/assets/images/icon/check-icon-red.png" />
+		</span>
+		{{title}}
+	</p>
+</div>

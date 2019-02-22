@@ -17,3 +17,17 @@ $font-path: '~@/assets/fonts/';
 html, body{
 	font-family: Lato, Sans-serif;
 }
+
+p{
+	margin-top: 0;
+	margin-bottom: 0.7rem;
+}
+
+.s-cl-g{
+	color: $v-grey;
+}
+
+
+.s-cl-r{
+	color: $v-red !important;
+}

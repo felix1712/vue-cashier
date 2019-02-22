@@ -7,6 +7,28 @@
   box-sizing: border-box;
 }
 
+.s-container{
+	padding: 0 15px;
+	margin: 0 auto;
+	@media (min-width: $v-sm) {
+		width: $container-sm;
+	}
+
+	@media (min-width: $v-md) {
+		width: $container-md;
+	}
+
+	@media (min-width: $v-lg) {
+		width: $container-lg;
+	}
+
+	&:before,
+	&:after{
+		display: table;
+		content: "";
+		clear: both;
+	}
+}
 // for grid styling
 @mixin col-grid($min, $max){
 	@for $i from $min to $max+1{
@@ -15,6 +37,10 @@
 			float: left;
 			position: relative;
 			min-height: 1px;
+		}
+
+		.col-offset-#{$i}{
+			margin-left: percentage($i/$max);
 		}
 	}
 }
@@ -102,6 +128,10 @@
 			padding-right:#{$i}px!important;
 			padding-left:#{$i}px!important;
 		}
+	}
+
+	.m-0-a{
+		margin:0 auto;
 	}
 }
 
