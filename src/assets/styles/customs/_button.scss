@@ -1,0 +1,62 @@
+.btn{
+	padding: 7px 12px;
+	display: inline-block;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	cursor: pointer;
+	background-image: none;
+	border: 1px solid transparent;
+	line-height: 1.5;
+	border-radius: 5px;
+
+	&.btn-fly{
+		border-radius: 20px;
+		padding: 7px 25px;
+
+		&.primary{
+			border: 1px solid $v-blue;
+			color: $v-blue;
+
+			&:hover,
+			&:active,
+			&:focus{
+				color: $v-white;
+				background: $v-blue;
+			}
+		}
+
+		&.secondary{
+			border: 1px solid $v-red;
+			color: $v-red;
+
+			&:hover{
+				color: $v-white;
+				background: $v-red;
+			}
+		}
+	}
+
+	&.btn-normal{
+		padding: 7px 30px;
+
+		&.primary{
+			border: 1px solid $v-red;
+			background: $v-red;
+			color: $v-white;
+
+			&:hover,
+			&:focus,
+			&:active{
+				background: #a2242b;
+			}
+		}
+
+		&.disabled{
+			cursor: default;
+			pointer-events: none;
+			background: rgba($v-red, 0.4);
+			border: 1px solid transparent;
+		}
+	}
+}
