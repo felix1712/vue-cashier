@@ -1,5 +1,5 @@
 <template>
-	<div class="page-cashier">
+	<div id="pageCashier">
 		<CashierPayment />
 	</div>
 </template>
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style lang="scss">
-	.page-cashier{
+	#pageCashier{
 		background: #FCFCFC;
 	}
 </style>
