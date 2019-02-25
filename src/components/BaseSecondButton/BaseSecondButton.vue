@@ -5,16 +5,16 @@ export default {
 	name: 'BaseSecondButton',
 	computed: {
 		type() {
-			if(this.to){
-				return 'router-link'
+			if (this.to) {
+				return 'router-link';
 			}
 
-			return 'a'
+			return 'a';
 		},
 	},
 	props: {
 		title: {
-			type:String,
+			type: String,
 			required: true,
 		},
 		to: {
