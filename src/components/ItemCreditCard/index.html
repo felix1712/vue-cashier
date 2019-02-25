@@ -1,78 +1,80 @@
 <div id="itemCreditCard">
 		<div class="row s-px-50">
-		<div class="col-12 s-ta-c s-mb-30">
-			<BaseSecondButton 
-				:title="'Gunakan Kartu Baru'"
-			/>
-		</div>	
-		<div class="col-12">
-			<div class="row">
-				<div class="col-2"><h1><</h1></div>
-				<div class="col-8">
-					<BaseCardFrame :class="'m-0-a'" />
+			<div class="col-12 s-ta-c s-mb-30">
+				<BaseSecondButton 
+					:title="'Gunakan Kartu Baru'"
+				/>
+			</div>	
+			<template> <!--  this template for already binded card -->
+				<div class="col-12">
+					<div class="row">
+						<div class="col-2"><h1><</h1></div>
+						<div class="col-8">
+							<BaseCardFrame :class="'m-0-a'" />
+						</div>
+						<div class="col-2"><h1 class="s-ta-r">></h1></div>
+					</div>
+					<div class="row">
+						<form @submit.prevent="checkForm">
+							<div class="col-12">
+								<BaseFormGroup 
+									:labelTitle="'Nomor Kartu'"
+									:inputId="'cardNoInput'"
+									:errorMessage="hasError['noCard'].errorMessage"
+								>
+									<input 
+										type="text" 
+										@input="removeError('noCard')"
+										class="s-form-control"
+										:class="{'has-error' : hasError['noCard'].errorMessage != null}"
+										v-model="cardNoModel" 
+										id="cardNoInput"
+										readonly="true" 
+										>
+								</BaseFormGroup>
+							</div>
+
+							<div class="col-8">
+								<BaseFormGroup 
+									:labelTitle="'Nama Anda'"
+									:inputId="'holderNameInput'"
+									:errorMessage="hasError['holderName'].errorMessage"
+								>
+									<input 
+										type="text" 
+										@input="removeError('holderName')"
+										class="s-form-control"
+										:class="{'has-error' : hasError['holderName'].errorMessage != null}"
+										v-model="holderNameModel" 
+										id="holderNameInput"
+										readonly="true" 
+										>
+								</BaseFormGroup>
+							</div>
+
+							<div class="col-4">
+								<BaseFormGroup 
+									:labelTitle="'CCV / CVV'"
+									:inputId="'cvvInput'"
+									:errorMessage="hasError['cvv'].errorMessage"
+								>
+									<input 
+										type="text" 
+										@input="removeError('cvv')"
+										class="s-form-control"
+										:class="{'has-error' : hasError['cvv'].errorMessage != null}"
+										v-model="cvvModel" 
+										id="cvvInput"
+										readonly="true" 
+										>
+									</BaseFormGroup>
+							</div>
+							<div class="col-12">
+								<label>Periods</label>
+							</div>
+						</form>
+					</div>
 				</div>
-				<div class="col-2"><h1 class="s-ta-r">></h1></div>
-			</div>
-			<div class="row">
-				<form @submit.prevent="checkForm">
-					<div class="col-12">
-						<BaseFormGroup 
-							:labelTitle="'Nomor Kartu'"
-							:inputId="'cardNoInput'"
-							:errorMessage="hasError['noCard'].errorMessage"
-						>
-							<input 
-								type="text" 
-								@input="removeError('noCard')"
-								class="s-form-control"
-								:class="{'has-error' : hasError['noCard'].errorMessage != null}"
-								v-model="cardNoModel" 
-								id="cardNoInput"
-								readonly="true" 
-								>
-						</BaseFormGroup>
-					</div>
-
-					<div class="col-8">
-						<BaseFormGroup 
-							:labelTitle="'Nama Anda'"
-							:inputId="'holderNameInput'"
-							:errorMessage="hasError['holderName'].errorMessage"
-						>
-							<input 
-								type="text" 
-								@input="removeError('holderName')"
-								class="s-form-control"
-								:class="{'has-error' : hasError['holderName'].errorMessage != null}"
-								v-model="holderNameModel" 
-								id="holderNameInput"
-								readonly="true" 
-								>
-						</BaseFormGroup>
-					</div>
-
-					<div class="col-4">
-						<BaseFormGroup 
-							:labelTitle="'CCV / CVV'"
-							:inputId="'cvvInput'"
-							:errorMessage="hasError['cvv'].errorMessage"
-						>
-							<input 
-								type="text" 
-								@input="removeError('cvv')"
-								class="s-form-control"
-								:class="{'has-error' : hasError['cvv'].errorMessage != null}"
-								v-model="cvvModel" 
-								id="cvvInput"
-								readonly="true" 
-								>
-							</BaseFormGroup>
-					</div>
-					<div class="col-12">
-						<label>Periods</label>
-					</div>
-				</form>
-			</div>
+			</template>
 		</div>
-	</div>
 </div>
