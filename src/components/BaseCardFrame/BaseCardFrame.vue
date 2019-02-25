@@ -13,7 +13,7 @@ export default {
 		background: #F8F8F8;
 		box-shadow: 4px 4px 10px rgba(235, 235, 235, 1);
 		display: block;
-		padding: 30px 20px 20px 20px;
+		padding: 50px 20px 20px 20px;
 		border-radius: 10px;
 
 		.chip-section{
@@ -50,6 +50,12 @@ export default {
 					height: auto;
 				}
 			}
+		}
+
+		.cvv-divider{
+			font-size: 1.7rem;
+			margin: 0 7px;
+			line-height: 1;
 		}
 	}
 </style>
