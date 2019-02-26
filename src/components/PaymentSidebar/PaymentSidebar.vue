@@ -8,6 +8,9 @@ export default {
 	components: {
 		BaseLogo,
 	},
+	 beforeCreate() {
+    console.log('Nothing gets called before me!')
+  },
 	data() {
   		return {
 			isActive: undefined,
@@ -117,6 +120,9 @@ export default {
 		width: 200%;
 		filter: grayscale(100%);
 	}
+}
+.left-border-recomended {
+	transform: translate(80%);
 }
 		
 </style>
