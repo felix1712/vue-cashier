@@ -7,12 +7,16 @@
 			</div>	
 			<template> <!--  this template for already binded card -->
 				<div class="col-12">
-					<div class="row">
-						<div class="col-1"><h1><</h1></div>
+					<div class="row s-my-50">
+						<div class="col-1">
+							<a class="custom-arrow left"></a>
+						</div>
 						<div class="col-10">
 							<BaseCardFrame :class="'m-0-a'" />
 						</div>
-						<div class="col-1"><h1 class="s-ta-r">></h1></div>
+						<div class="col-1">
+							<a class="custom-arrow right t-a-r"></a>
+						</div>
 					</div>
 					<div class="row">
 						<form @submit.prevent="checkForm">
@@ -70,11 +74,11 @@
 									</BaseFormGroup>
 							</div>
 							<div class="col-12">
-								<label>Periods</label>
+								<label class="form-group">Periods</label>
 								<div class="payment-periods">
 									<div class="col-4">
 										<BaseRadioPeriod 
-											:periodLabel="'Full-Payment'"
+											:periodLabel="'Full Payment'"
 											:periodPrice="'150,000'"
 											:radioName="'periode'"
 											:radioId="'fullPayment'"
@@ -94,6 +98,7 @@
 											:radioValue="3"
 											:radioChecked="periodValue"
 											:radioDisabled="true"
+											periodIst="true"
 											v-model="periodValue"
 										>
 										</BaseRadioPeriod>
@@ -107,6 +112,21 @@
 											:radioId="'4-periods'"
 											:radioValue="4"
 											:radioChecked="periodValue"
+											periodIst="true"
+											v-model="periodValue"
+										>
+										</BaseRadioPeriod>
+									</div>
+
+									<div class="col-4">
+										<BaseRadioPeriod 
+											:periodLabel="'5'"
+											:periodPrice="'150,000'"
+											:radioName="'periode'"
+											:radioId="'5-periods'"
+											:radioValue="5"
+											:radioChecked="periodValue"
+											periodIst="true"
 											v-model="periodValue"
 										>
 										</BaseRadioPeriod>

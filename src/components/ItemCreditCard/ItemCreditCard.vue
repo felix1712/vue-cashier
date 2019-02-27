@@ -68,14 +68,18 @@ export default {
 </script>
 
 <style scoped lang="scss" >
+
+  .custom-arrow{
+    position: absolute;
+    top: 6rem;
+  }
   .payment-periods{
     &:before{
       display: table;
       content: '';
     }
     .col-4{
-      padding: 0;
-      padding-right: 15px;
+      padding: 0 15px 15px 0;
     }
   }
 
