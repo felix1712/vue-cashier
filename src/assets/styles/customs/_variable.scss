@@ -6,7 +6,7 @@ $v-lg   : 1300px;
 //container size
 $container-sm: 750px;
 $container-md: 970px;
-$container-lg: 1170px;
+$container-lg: 1280px;
 
 //color
 $v-black: #464646;
@@ -16,3 +16,8 @@ $v-grey: #A7A7A7;
 $v-white: #fff;
 $v-border-input: #E6E6E6;
 $v-label-input: #726E6E;
+
+//border
+$border-normal: 1px solid $v-border-input;
+$border-red: 1px solid $v-red;
+$border-disabled: 1px solid rgba($v-border-input, 0.5);
