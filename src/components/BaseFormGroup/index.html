@@ -1,0 +1,5 @@
+<div class="form-group">
+	<label :for="inputId">{{labelTitle}}</label>
+	<slot></slot>
+	<small v-if="errorMessage" class="field-text-error">{{errorMessage}}</small>
+</div>
