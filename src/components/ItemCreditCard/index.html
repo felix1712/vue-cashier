@@ -68,13 +68,13 @@
 									:errorMessage="hasError['cvv'].errorMessage"
 								>
 									<input 
-										type="text" 
+										type="number" 
 										@input="removeError('cvv')"
 										class="s-form-control"
 										:class="{'has-error' : hasError['cvv'].errorMessage != null}"
 										v-model="cvvModel" 
 										id="cvvInput"
-										readonly="true" 
+										maxlength="3" 
 										>
 									</BaseFormGroup>
 							</div>
