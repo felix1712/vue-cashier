@@ -17,12 +17,16 @@ export default {
 
 <style lang="scss" scoped>
 	#progressTitle{
-		span{
-			margin-right: 10px;
-			img{
-				width: 35px;
-				height: auto;
-				vertical-align: middle;
+		p{
+			margin: 0;
+
+			span{
+				margin-right: 10px;
+				img{
+					width: 20px;
+					height: auto;
+					vertical-align: middle;
+				}
 			}
 		}
 	}
