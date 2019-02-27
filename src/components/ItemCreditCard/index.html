@@ -71,6 +71,28 @@
 							</div>
 							<div class="col-12">
 								<label>Periods</label>
+								<BaseRadioPeriod 
+									:periodLabel="'Full-Payment'"
+									:periodPrice="'150,000'"
+									:radioName="'periode'"
+									:radioId="'fullPayment'"
+									:radioValue="'FP'"
+									:radioChecked="periodValue"
+									v-model="periodValue"
+								>
+								</BaseRadioPeriod>
+
+								<BaseRadioPeriod 
+									:periodLabel="'3'"
+									:periodPrice="'150,000'"
+									:radioName="'periode'"
+									:radioId="'3-periods'"
+									:radioValue="3"
+									:radioChecked="periodValue"
+									:radioDisabled="true"
+									v-model="periodValue"
+								>
+								</BaseRadioPeriod>
 							</div>
 						</form>
 					</div>

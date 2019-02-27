@@ -4,6 +4,7 @@
 import BaseCardFrame from '@/components/BaseCardFrame/BaseCardFrame.vue';
 import BaseSecondButton from '@/components/BaseSecondButton/BaseSecondButton.vue';
 import BaseFormGroup from '@/components/BaseFormGroup/BaseFormGroup.vue';
+import BaseRadioPeriod from '@/components/BaseRadioPeriod/BaseRadioPeriod.vue';
 
 export default {
 	name: 'ItemCreditCard',
@@ -12,6 +13,7 @@ export default {
 			cardNoModel: null,
 			holderNameModel: null,
 			cvvModel: null,
+			periodValue: null,
 			hasError: {
 				noCard: {
 					errorMessage: null,
@@ -29,6 +31,7 @@ export default {
 		BaseCardFrame,
 		BaseSecondButton,
 		BaseFormGroup,
+		BaseRadioPeriod,
 	},
 	methods: {
 		checkForm() {
