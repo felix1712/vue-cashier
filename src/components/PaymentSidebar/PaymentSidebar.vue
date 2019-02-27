@@ -96,9 +96,7 @@ export default {
 }
 
 .s-pad {
-	padding-left: 2rem;
-	padding-top: 2rem;
-	padding-bottom: 2rem;
+	padding: 1rem;
 	cursor: pointer;
 	border-bottom: 1px solid #E0D0D0;
 }
@@ -117,12 +115,10 @@ export default {
 	padding: 0 10px;
 	border-top: 1px solid #efefef;
 	.secure-image-bottom {
-		width: 200%;
+		width: 600%;
 		filter: grayscale(100%);
 	}
 }
-.left-border-recomended {
-	transform: translate(80%);
-}
+
 		
 </style>

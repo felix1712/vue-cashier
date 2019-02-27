@@ -5,6 +5,13 @@
 					:title="'Gunakan Kartu Baru'"
 				/>
 			</div>	
+			<template v-for="(kadal, index) in kadalObject">
+					<BaseSubPayment 
+					:key="index"
+					
+					:object="kadal.nama" />
+
+			</template>
 			<template> <!--  this template for already binded card -->
 				<div class="col-12">
 					<div class="row">
