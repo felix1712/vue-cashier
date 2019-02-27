@@ -16,3 +16,8 @@ $v-grey: #A7A7A7;
 $v-white: #fff;
 $v-border-input: #E6E6E6;
 $v-label-input: #726E6E;
+
+//border
+$border-normal: 1px solid $v-border-input;
+$border-red: 1px solid $v-red;
+$border-disabled: 1px solid rgba($v-border-input, 0.5);

@@ -46,10 +46,6 @@ export default {
 <style lang="scss" scoped>
 	@import "@/assets/styles/customs/_variable.scss";
 
-	$border-normal: 1px solid $v-border-input;
-	$border-red: 1px solid $v-red;
-	$border-disabled: 1px solid rgba($v-border-input, 0.5);
-
 	.radio-period{
 		cursor: pointer;
 		color: $v-black;
@@ -89,35 +85,6 @@ export default {
 					position: absolute;
 					visibility: hidden;
 				}
-
-				.custom-radio{
-					display: inline-block;
-					position: absolute;
-					border: $border-normal;
-					border-radius: 100%;
-					height: 20px;
-					width: 20px;
-					top: 50%;
-					transform: translateY(-50%);
-					z-index: 5;
-					transition: border .10s linear;
-					-webkit-transition: border .10s linear;
-					margin: 0 10px;
-
-					&:before{
-						display: block;
-						position: absolute;
-						content: '';
-						border-radius: 100%;
-						height: 10px;
-						width: 10px;
-						top: 4px;
-						left: 4px;
-						margin: auto;
-						transition: background 0.10s linear;
-						-webkit-transition: background 0.10s linear;
-					}
-				}
 			}
 		}
 
@@ -133,14 +100,6 @@ export default {
 
 				.custom-radio{
 					border: $border-red !important;
-				}
-			}
-
-			&.checked{
-				.custom-radio{
-					&:before{
-						background: $v-red;
-					}
 				}
 			}
 		}
