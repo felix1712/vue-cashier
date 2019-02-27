@@ -46,36 +46,35 @@ export default {
 <style lang="scss" scoped>
 	@import "@/assets/styles/customs/_variable.scss";
 
-	$border-normal: 1.5px solid $v-border-input;
-	$border-red: 1.5px solid $v-red;
-	$border-disabled: 1.5px solid rgba($v-border-input, 0.5);
+	$border-normal: 1px solid $v-border-input;
+	$border-red: 1px solid $v-red;
+	$border-disabled: 1px solid rgba($v-border-input, 0.5);
 
 	.radio-period{
 		cursor: pointer;
 		color: $v-black;
 		border: $border-normal;
 		display: inline-block;
-		width: 300px;
-		max-width: 300px;
+		width: 100%;
 		border-radius: 7px;
 		transition: border .10s linear;
 		-webkit-transition: border .10s linear;
-		margin: 10px;
 
 		label{
 			cursor: pointer;
+			margin-bottom: 0;
 
 			.label-frame{
 				padding: 20px;
 				display: inline-block;
-				width: 85%;
+				width: 75%;
 				float: right;
 				border-left: $border-normal;
 				transition: border .10s linear;
 				-webkit-transition: border .10s linear;
 
 				p, h5{
-					font-size: 1.2rem;
+					font-size: 0.8rem;
 				}
 
 				h5{
@@ -96,8 +95,8 @@ export default {
 					position: absolute;
 					border: $border-normal;
 					border-radius: 100%;
-					height: 25px;
-					width: 25px;
+					height: 20px;
+					width: 20px;
 					top: 50%;
 					transform: translateY(-50%);
 					z-index: 5;
@@ -110,8 +109,8 @@ export default {
 						position: absolute;
 						content: '';
 						border-radius: 100%;
-						height: 15px;
-						width: 15px;
+						height: 10px;
+						width: 10px;
 						top: 4px;
 						left: 4px;
 						margin: auto;

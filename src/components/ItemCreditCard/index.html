@@ -1,5 +1,5 @@
 <div id="itemCreditCard">
-		<div class="row s-px-50">
+		<div class="row s-px-20">
 			<div class="col-12 s-ta-c s-mb-30">
 				<BaseSecondButton 
 					:title="'Gunakan Kartu Baru'"
@@ -71,28 +71,47 @@
 							</div>
 							<div class="col-12">
 								<label>Periods</label>
-								<BaseRadioPeriod 
-									:periodLabel="'Full-Payment'"
-									:periodPrice="'150,000'"
-									:radioName="'periode'"
-									:radioId="'fullPayment'"
-									:radioValue="'FP'"
-									:radioChecked="periodValue"
-									v-model="periodValue"
-								>
-								</BaseRadioPeriod>
+								<div class="payment-periods">
+									<div class="col-4">
+										<BaseRadioPeriod 
+											:periodLabel="'Full-Payment'"
+											:periodPrice="'150,000'"
+											:radioName="'periode'"
+											:radioId="'fullPayment'"
+											:radioValue="'FP'"
+											:radioChecked="periodValue"
+											v-model="periodValue"
+										>
+										</BaseRadioPeriod>
+									</div>
 
-								<BaseRadioPeriod 
-									:periodLabel="'3'"
-									:periodPrice="'150,000'"
-									:radioName="'periode'"
-									:radioId="'3-periods'"
-									:radioValue="3"
-									:radioChecked="periodValue"
-									:radioDisabled="true"
-									v-model="periodValue"
-								>
-								</BaseRadioPeriod>
+									<div class="col-4">
+										<BaseRadioPeriod 
+											:periodLabel="'3'"
+											:periodPrice="'150,000'"
+											:radioName="'periode'"
+											:radioId="'3-periods'"
+											:radioValue="3"
+											:radioChecked="periodValue"
+											:radioDisabled="true"
+											v-model="periodValue"
+										>
+										</BaseRadioPeriod>
+									</div>
+
+									<div class="col-4">
+										<BaseRadioPeriod 
+											:periodLabel="'4'"
+											:periodPrice="'150,000'"
+											:radioName="'periode'"
+											:radioId="'4-periods'"
+											:radioValue="4"
+											:radioChecked="periodValue"
+											v-model="periodValue"
+										>
+										</BaseRadioPeriod>
+									</div>
+								</div>
 							</div>
 						</form>
 					</div>
