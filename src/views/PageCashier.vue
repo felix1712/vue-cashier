@@ -1,6 +1,6 @@
 <template>
 	<div id="pageCashier">
-		<div class="row">
+		<div class="row s-container">
 			<CashierPayment />
 			<CashierDetail />
 		</div>
