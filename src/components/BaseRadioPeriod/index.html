@@ -1,0 +1,12 @@
+<div class="radio-period" :class="{'checked' : radioChecked == radioValue, 'disabled': radioDisabled}">
+	<label :for="radioId">
+		<div class="radio-frame">
+			<input :name="radioName" type="radio" :id="radioId" :value="radioValue" @change="radioChange(radioValue)" v-model="picked" :disabled="radioDisabled">
+			<div class="custom-radio"></div>
+		</div>
+		<div class="label-frame">
+			<p>{{periodLabel}}<span v-if="periodType == 'ist'">&nbsp; Cicilan</span></p>
+			<h5>Rp <span>{{periodPrice}}</span></h5>
+		</div>
+	</label>
+</div>
