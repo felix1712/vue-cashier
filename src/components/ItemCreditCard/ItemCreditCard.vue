@@ -3,7 +3,7 @@
 <script>
 import BaseCardFrame from '@/components/BaseCardFrame/BaseCardFrame.vue';
 import BaseSecondButton from '@/components/BaseSecondButton/BaseSecondButton.vue';
-import BaseSubPayment from '@/components/BaseSubPayment/BaseSubPayment.vue';
+
 import BaseFormGroup from '@/components/BaseFormGroup/BaseFormGroup.vue';
 import BaseRadioPeriod from '@/components/BaseRadioPeriod/BaseRadioPeriod.vue';
 
@@ -45,7 +45,6 @@ export default {
 		BaseCardFrame,
 		BaseSecondButton,
 		BaseFormGroup,
-		BaseSubPayment,
 		BaseRadioPeriod,
 	},
 	methods: {

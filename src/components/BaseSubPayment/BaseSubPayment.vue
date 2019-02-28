@@ -1,8 +1,13 @@
 <template src="./index.html"></template>
 
 <script>
+import BaseProgress from '@/components/BaseProgress/BaseProgress.vue';
 export default {
-	name: 'BaseSubPayment',
+    
+    name: 'BaseSubPayment',
+    	components: {
+		BaseProgress,
+	},
 	computed: {
 		type() {
 			if (this.to) {
@@ -12,16 +17,34 @@ export default {
 			return 'a';
 		},
     },
-    
+    data() {
+        return {
+            			cardNoModel: null,
+			holderNameModel: null,
+			cvvModel: null,
+			periodValue: null,
+			hasError: {
+				noCard: {
+					errorMessage: null,
+				},
+				holderName: {
+					errorMessage: null,
+				},
+				cvv: {
+					errorMessage: null,
+				},
+			},
+        }
+    },
 	props: {
         object: {
             type: String,
-            required: true,
         },
         title : {
             required: false,
         }
-	},
+    },
+    
 };
 </script>
 

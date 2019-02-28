@@ -2,7 +2,7 @@
 
 <script>
 import BaseLogo from '@/components/BaseLogo/BaseLogo.vue';
-
+import { EventBus } from '@/event-bus.js';
 export default {
 	name: 'PaymentSidebar',
 	components: {
@@ -11,9 +11,12 @@ export default {
 	 beforeCreate() {
     console.log('Nothing gets called before me!')
   },
+
 	data() {
   		return {
+			dataToGo: undefined,
 			isActive: undefined,
+			 clickCount: 0,
 			publicPath: [{
 				userId: 1,
 				id: 1,
@@ -58,8 +61,16 @@ export default {
 	methods: {
 		sendBankName(i,data) {
 			this.isActive = i 
+			this.dataToGo = data;
 			console.log('nama bank : ', data)
+						EventBus.$emit('i-got-clicked', data);
 		},
+		emitGlobalClickEvent() {
+			this.clickCount++;
+			console.log(this.clickCount)
+			// Send the event on a channel (i-got-clicked) with a payload (the click count.)
+
+    },
 	},
 };
 </script>
@@ -115,7 +126,7 @@ export default {
 	padding: 0 10px;
 	border-top: 1px solid #efefef;
 	.secure-image-bottom {
-		width: 600%;
+		width: 15em;
 		filter: grayscale(100%);
 	}
 }
