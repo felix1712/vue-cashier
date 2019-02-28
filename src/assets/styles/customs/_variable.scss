@@ -3,12 +3,12 @@ $v-sm   : 767px;
 $v-md   : 992px;
 $v-lg   : 1300px;
 
-//container size
+// container size
 $container-sm: 750px;
 $container-md: 970px;
 $container-lg: 1280px;
 
-//color
+// color
 $v-black: #464646;
 $v-blue: #008BE0;
 $v-red: #CB2E36;
@@ -16,8 +16,9 @@ $v-grey: #A7A7A7;
 $v-white: #fff;
 $v-border-input: #E6E6E6;
 $v-label-input: #726E6E;
+$v-dots: #D8D8D8;
 
-//border
+// border
 $border-normal: 1px solid $v-border-input;
 $border-red: 1px solid $v-red;
 $border-disabled: 1px solid rgba($v-border-input, 0.5);
