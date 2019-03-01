@@ -1,4 +1,4 @@
-export const customJs = {
+const customJs = {
 	methods: {
 		formatDate(event) {
 			// const inputChar = String.fromCharCode(event.keyCode);
@@ -30,3 +30,5 @@ export const customJs = {
 		},
 	},
 };
+
+export default customJs;
