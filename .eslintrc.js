@@ -13,6 +13,7 @@ module.exports = {
     "indent": [2, "tab"],
     "no-tabs": 0,
     "no-useless-escape": 0,
+    "no-param-reassign": 0
     // "semi": [2, "never"], this rules is for remove semicolon on eslint
   },
   parserOptions: {

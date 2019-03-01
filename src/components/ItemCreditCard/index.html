@@ -168,6 +168,7 @@
 										:class="{'has-error' : hasError['noCard'].errorMessage != null}"
 										v-model="cardNoModel" 
 										id="cardNoInput"
+										@keyup="this.$root.creditCardFormat"
 										>
 								</BaseFormGroup>
 							</div>
