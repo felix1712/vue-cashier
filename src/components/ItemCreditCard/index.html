@@ -1,11 +1,20 @@
 <div id="itemCreditCard">
+	<span>{{bindCard}}</span>
 		<div class="row s-px-20">
 			<div class="col-12 s-ta-c s-my-30">
 				<BaseSecondButton 
+					v-if="bindCard"
+					@click.native="templateForm"
 					:title="'Gunakan Kartu Baru'"
 				/>
+
+				<BaseSecondButton 
+					v-else
+					@click.native="templateForm"
+					:title="'Kembali ke kartu saya'"
+				/>
 			</div>	
-			<template v-if="false"> <!--  this template for already binded card -->
+			<template v-if="bindCard"> <!--  this template for already binded card -->
 				<div class="col-12">
 					<div class="row s-my-50">
 						<div class="col-1">

@@ -11,6 +11,7 @@ export default {
 	name: 'ItemCreditCard',
 	data() {
 		return {
+			bindCard: false,
 			cardNoModel: null,
 			holderNameModel: null,
 			cvvModel: null,
@@ -81,6 +82,10 @@ export default {
 
 		changeFormat(event) {
 			this.$root.formatDate(event);
+		},
+
+		templateForm() {
+			this.bindCard = !this.bindCard;
 		},
 	},
 };
