@@ -4,10 +4,18 @@
 			<template> <!--  this template for already binded card -->
 				<div class="col-12">
 					<div class="row s-my-50">
-					
-						<div class="col-12 dots s-mt-10">
-                                <input class="medium" checked type="radio" name="a"/> <span>123</span>
-						</div>
+                                    <BaseRadioPeriod 
+                                        :periodLabel="'GO-PAY'"
+                                        :radioValue="3"
+                                        :radioChecked="periodValue"
+                                        v-model="periodValue" 
+                                        :radioName="'123'"
+                                        :paymentMethod=true
+                                        :periodPrice="'150,000'"
+                                        :radioId="'fullPayment'"
+                                        
+                                    >
+                                    </BaseRadioPeriod>
 					</div>
 				</div>
 			</template>

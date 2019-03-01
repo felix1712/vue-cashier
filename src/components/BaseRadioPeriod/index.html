@@ -1,13 +1,29 @@
-<div class="radio-period" :class="{'checked' : radioChecked == radioValue, 'disabled': radioDisabled}">
-	<label :for="radioId">
-		<div class="radio-frame">
-			<input :name="radioName" type="radio" :id="radioId" :value="radioValue" @change="radioChange(radioValue)" v-model="picked" :disabled="radioDisabled">
-			<div class="custom-radio"></div>
+<!-- <template> -->
+		<div v-if="paymentMethod">
+				<div class="radio-period" :class="{'checked' : radioChecked == radioValue, 'disabled': radioDisabled}">
+						<label :for="radioId">
+							<div class="radio-frame" :class = "color">
+								<input :name="radioName" type="radio" :id="radioId"  :value="radioValue" @change="radioChange(radioValue)" v-model="picked" :disabled="radioDisabled">
+								<div  class="custom-radio custom-radio-gojek"></div>
+							</div>
+							<div class="label-frame">
+								<p>{{periodLabel}}</p>
+							</div>
+						</label>
+					</div>
+					
 		</div>
-		<div class="label-frame">
-			<p>{{periodLabel}}<span v-if="periodIst">x Cicilan</span></p>
-			<h5>Rp <span>{{periodPrice}}</span></h5>
+		<div v-else>
+				<div class="radio-period" :class="{'checked' : radioChecked == radioValue, 'disabled': radioDisabled}">
+						<label :for="radioId">
+							<div class="radio-frame" :class = "color">
+								<input :name="radioName" type="radio"  :id="radioId" :value="radioValue" @change="radioChange(radioValue)" v-model="picked" :disabled="radioDisabled">
+								<div  class="custom-radio"></div>
+							</div>
+							<div class="label-frame">
+								<p>{{periodLabel}}<span v-if="periodIst">x Cicilan</span></p>
+								<h5>Rp <span>{{periodPrice}}</span></h5>
+							</div>
+						</label>
+					</div>
 		</div>
-	</label>
-	
-</div>

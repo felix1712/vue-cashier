@@ -26,19 +26,6 @@ export default {
 					errorMessage: null,
 				},
 			},
-
-			kadalObject: [
-				{
-					nama: 'kadalBuntung',
-					umur: 1,
-				},{
-					nama: 'kadalBuntungs',
-					umur: 2,
-				},{
-					nama: 'kadalBuntungx',
-					umur: 3,
-				}
-			],
 		};
 	},
 	components: {

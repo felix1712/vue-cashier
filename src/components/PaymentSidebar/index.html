@@ -6,11 +6,11 @@
 				v-for="(s, item) in publicPath" 
 				:key="item.id"
 				@click="sendBankName(s,s.bankName)"
-				:class = "{'active' : isActive === s }">
+				:class = "{'active' : isActive === s  }">
 				 <div class="col-12 s-p-0">
 					<div class="row">
 					   <div class="col-8">
-						  <span class="s-dis-blok span-bank-name s-ft-r"> {{ s.bankName }} </span>	
+						  <span class="s-dis-blok span-bank-name s-ft-r"> {{ s.bankName }} {{ s.id }} </span>	
 						  <img :src="s.imgPc">
 					   </div>
 					   <div class="col-2">

@@ -5,11 +5,7 @@ import PaymentSidebar from '@/components/PaymentSidebar/PaymentSidebar.vue';
 import PaymentContainer from '@/components/PaymentContainer/PaymentContainer.vue';
 import BaseSubPayment from '@/components/BaseSubPayment/BaseSubPayment.vue';
 import { EventBus } from '@/event-bus.js';
-var a
-// const clickHandler = function(clickCount) {
-// 	a = clickCount;
-// }
-// EventBus.$on('i-got-clicked', clickHandler);
+
 export default {
 	
 	name: 'CashierPayment',

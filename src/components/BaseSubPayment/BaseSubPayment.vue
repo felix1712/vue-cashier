@@ -2,11 +2,12 @@
 
 <script>
 import BaseProgress from '@/components/BaseProgress/BaseProgress.vue';
+import BaseRadioPeriod from '@/components/BaseRadioPeriod/BaseRadioPeriod.vue';
 export default {
     
     name: 'BaseSubPayment',
     	components: {
-		BaseProgress,
+		BaseProgress,BaseRadioPeriod
 	},
 	computed: {
 		type() {
@@ -19,7 +20,7 @@ export default {
     },
     data() {
         return {
-            			cardNoModel: null,
+            cardNoModel: null,
 			holderNameModel: null,
 			cvvModel: null,
 			periodValue: null,
@@ -48,40 +49,9 @@ export default {
 };
 </script>
 
-
 <style lang="scss" scoped>
-
-input[type="radio"] {
-  appearance:none;
-  margin:0 40px;
-  width: 24px;
-  height: 24px;
-  background: #eeeeee;
-  box-shadow:
-    inset 0 0 0 .4em white,
-    0 0 0 .3em;
-  border-radius: 50%;
-  transition: .2s;
-  cursor:pointer;
-  color:  #D13C3C;
-
-  &:hover,
-  &:checked {
-    background:  #D13C3C;
-    box-shadow:
-    inset 0 0 0 .6em white,
-    0 0 0 .3em;
-  }
-  
-  &:checked {
-    background: #D13C3C;
-    box-shadow:
-      inset 0 0 0 .4em white,
-      0 0 0 .3em #D13C3C;
-  } 
-
-  &:focus { outline: 0; }
+.custom-radio {
+    color: pink !important;
+    background: red !important;
 }
-
-
 </style>
