@@ -153,6 +153,15 @@ $d-code : underline, overline, line-through, none;
   }
 }
 
+// Text Color [s-tc-r]
+$c-code : black, grey, red, blue, disabled;
+$c-value : $v-black, $v-grey, $v-red, $v-blue, $v-grey;
+@for $c from 1 through length($c-code) {
+  .s-tc-#{nth($c-code, $c)} {
+    color: #{nth($c-code, $c)};
+  }
+}
+
 // Font Weight [.s-ft-($w-code)]
 $fw-code: l, r, b;
 $fw-value: 300, 400, 700;

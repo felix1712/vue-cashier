@@ -5,6 +5,7 @@ import BaseCardFrame from '@/components/BaseCardFrame/BaseCardFrame.vue';
 import BaseSecondButton from '@/components/BaseSecondButton/BaseSecondButton.vue';
 import BaseFormGroup from '@/components/BaseFormGroup/BaseFormGroup.vue';
 import BaseRadioPeriod from '@/components/BaseRadioPeriod/BaseRadioPeriod.vue';
+import BaseCheckbox from '@/components/BaseCheckbox/BaseCheckbox.vue';
 
 export default {
 	name: 'ItemCreditCard',
@@ -13,7 +14,9 @@ export default {
 			cardNoModel: null,
 			holderNameModel: null,
 			cvvModel: null,
+			expiredDateModel: null,
 			periodValue: null,
+			saveNewCardModel: false,
 			hasError: {
 				noCard: {
 					errorMessage: null,
@@ -24,7 +27,12 @@ export default {
 				cvv: {
 					errorMessage: null,
 				},
+				expiredDate: {
+					errorMessage: null,
+				},
 			},
+
+			waktu: 90,
 		};
 	},
 	components: {
@@ -32,6 +40,7 @@ export default {
 		BaseSecondButton,
 		BaseFormGroup,
 		BaseRadioPeriod,
+		BaseCheckbox,
 	},
 	methods: {
 		checkForm() {
@@ -53,7 +62,13 @@ export default {
 				this.hasError.cvv.errorMessage = 'Hai Error CVV';
 			}
 
-			if (this.cardNoModel && this.holderNameModel && this.cvvModel) {
+			if (this.expiredDateModel) {
+				this.hasError.cvv.errorMessage = null;
+			} else {
+				this.hasError.cvv.errorMessage = 'Hai Error CVV';
+			}
+
+			if (this.cardNoModel && this.holderNameModel && this.cvvModel && this.expiredDateModel) {
 				return true;
 			}
 
@@ -63,25 +78,28 @@ export default {
 		removeError(inputName) {
 			this.hasError[inputName].errorMessage = null;
 		},
+
+		changeFormat(event) {
+			this.$root.formatDate(event);
+		},
 	},
 };
 </script>
 
 <style scoped lang="scss" >
 
-  .custom-arrow{
-    position: absolute;
-    top: 6rem;
-  }
-  .payment-periods{
-    &:before{
-      display: table;
-      content: '';
-    }
-    .col-4{
-      padding: 0 15px 15px 0;
-    }
-  }
+	.custom-arrow{
+		position: absolute;
+		top: 6rem;
+	}
+	.payment-periods{
+		&:before{
+			display: table;
+			content: '';
+		}
+		.col-4{
+			padding: 0 15px 15px 0;
+		}
+	}
 
 </style>
-
