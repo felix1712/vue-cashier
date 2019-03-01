@@ -9,7 +9,7 @@ export default {
 		};
 	},
 	props: {
-		periodType: {
+		periodIst: {
 			required: false,
 		},
 		periodLabel: {
@@ -61,7 +61,7 @@ export default {
 			margin-bottom: 0;
 
 			.label-frame{
-				padding: 20px;
+				padding: 15px;
 				display: inline-block;
 				width: 75%;
 				float: right;
