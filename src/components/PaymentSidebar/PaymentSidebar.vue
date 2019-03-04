@@ -92,7 +92,6 @@ export default {
 	box-shadow: 2px 2px 4px 0 rgba(231, 231, 231, 0.50);
 	border-left: 3px solid #CA2F35;
 	height: auto;
-	letter-spacing: 1px;
 	color: #CB2E36;
 	// padding-left: 2rem;
 	// padding-top: 2rem;
@@ -108,9 +107,12 @@ export default {
 }
 
 .s-pad {
-	padding: 1rem;
+	padding: 1.7rem;
 	cursor: pointer;
 	border-bottom: 1px solid #E0D0D0;
+    &:last-child {
+       	border-bottom: 1px solid red;
+    }
 }
 
 .border-with-doted {
