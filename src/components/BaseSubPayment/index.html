@@ -1,8 +1,23 @@
-
-<div>
-    <div class="custom-dots">
-
-    </div>
-    <span>{{ object }}</span>
+<div id="itemCreditCard">
+    <BaseProgress></BaseProgress>
+		<div class="row s-px-20">
+			<template> <!--  this template for already binded card -->
+				<div class="col-12">
+					<div class="row s-my-50">
+                                    <BaseRadioPeriod 
+                                        :periodLabel="'GO-PAY'"
+                                        :radioValue="3"
+                                        :radioChecked="periodValue"
+                                        v-model="periodValue" 
+                                        :radioName="'123'"
+                                        :paymentMethod=true
+                                        :periodPrice="'150,000'"
+                                        :radioId="'fullPayment'"
+                                        
+                                    >
+                                    </BaseRadioPeriod>
+					</div>
+				</div>
+			</template>
+		</div>
 </div>
-<!-- <div class="custom-dots"></div> -->

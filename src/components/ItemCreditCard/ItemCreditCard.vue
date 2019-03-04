@@ -3,7 +3,7 @@
 <script>
 import BaseCardFrame from '@/components/BaseCardFrame/BaseCardFrame.vue';
 import BaseSecondButton from '@/components/BaseSecondButton/BaseSecondButton.vue';
-import BaseSubPayment from '@/components/BaseSubPayment/BaseSubPayment.vue';
+
 import BaseFormGroup from '@/components/BaseFormGroup/BaseFormGroup.vue';
 import BaseRadioPeriod from '@/components/BaseRadioPeriod/BaseRadioPeriod.vue';
 import BaseCheckbox from '@/components/BaseCheckbox/BaseCheckbox.vue';
@@ -33,26 +33,12 @@ export default {
 					errorMessage: null,
 				},
 			},
-
-			kadalObject: [
-				{
-					nama: 'kadalBuntung',
-					umur: 1,
-				},{
-					nama: 'kadalBuntungs',
-					umur: 2,
-				},{
-					nama: 'kadalBuntungx',
-					umur: 3,
-				}
-			],
 		};
 	},
 	components: {
 		BaseCardFrame,
 		BaseSecondButton,
 		BaseFormGroup,
-		BaseSubPayment,
 		BaseRadioPeriod,
 		BaseCheckbox,
 	},
