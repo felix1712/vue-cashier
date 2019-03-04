@@ -12,12 +12,12 @@ export default {
 		periodIst: {
 			required: false,
 		},
-		paymentMethod: { //dipakai di untuk gopay metode pembayaraan
+		paymentMethod: { // dipakai di untuk gopay metode pembayaraan
 			required: false,
 		},
 		paymentImage: {
 			required: false,
-			type : String,
+			type: String,
 		},
 		periodLabel: {
 			required: true,

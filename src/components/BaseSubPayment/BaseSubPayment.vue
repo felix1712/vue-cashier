@@ -3,11 +3,12 @@
 <script>
 import BaseProgress from '@/components/BaseProgress/BaseProgress.vue';
 import BaseRadioPeriod from '@/components/BaseRadioPeriod/BaseRadioPeriod.vue';
+
 export default {
-    
-    name: 'BaseSubPayment',
-    	components: {
-		BaseProgress,BaseRadioPeriod
+
+	name: 'BaseSubPayment',
+        components: {
+		BaseProgress, BaseRadioPeriod,
 	},
 	computed: {
 		type() {
@@ -17,10 +18,10 @@ export default {
 
 			return 'a';
 		},
-    },
-    data() {
-        return {
-            cardNoModel: null,
+	},
+	data() {
+		return {
+			cardNoModel: null,
 			holderNameModel: null,
 			cvvModel: null,
 			periodValue: null,
@@ -35,17 +36,17 @@ export default {
 					errorMessage: null,
 				},
 			},
-        }
-    },
+		};
+	},
 	props: {
-        object: {
-            type: String,
-        },
-        title : {
-            required: false,
-        }
-    },
-    
+		object: {
+			type: String,
+		},
+		title: {
+			required: false,
+		},
+	},
+
 };
 </script>
 
