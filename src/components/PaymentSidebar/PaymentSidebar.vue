@@ -61,7 +61,7 @@ export default {
 			this.isActive = i 
 			this.dataToGo = data;
 			console.log('nama bank : ', data)
-						EventBus.$emit('i-got-clicked', data);
+			EventBus.$emit('i-got-clicked', data);
 		},
 		emitGlobalClickEvent() {
 			this.clickCount++;

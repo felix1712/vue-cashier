@@ -6,8 +6,9 @@
 								<input :name="radioName" type="radio" :id="radioId"  :value="radioValue" @change="radioChange(radioValue)" v-model="picked" :disabled="radioDisabled">
 								<div  class="custom-radio custom-radio-gojek"></div>
 							</div>
-							<div class="label-frame">
-								<p>{{periodLabel}}</p>
+							<div class="label-frame s-pb-16">
+								<span class="s-mr-20">{{periodLabel}}</span>
+								<img :src="paymentImage" alt="Go-JEk">
 							</div>
 						</label>
 					</div>

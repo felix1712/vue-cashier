@@ -15,6 +15,10 @@ export default {
 		paymentMethod: { //dipakai di untuk gopay metode pembayaraan
 			required: false,
 		},
+		paymentImage: {
+			required: false,
+			type : String,
+		},
 		periodLabel: {
 			required: true,
 			type: String,
@@ -76,7 +80,7 @@ export default {
 				transition: border .10s linear;
 				-webkit-transition: border .10s linear;
 
-				p, h5{
+				p, span, h5{
 					font-size: 0.8rem;
 				}
 
