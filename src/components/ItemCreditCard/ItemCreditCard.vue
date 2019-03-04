@@ -200,4 +200,9 @@ export default {
 		}
 	}
 
+	.cvv-info{
+		width: 100%;
+		height: auto;
+	}
+
 </style>

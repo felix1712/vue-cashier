@@ -5,6 +5,7 @@
 					v-if="dummyCard"
 					@click.native="templateForm"
 					:title="titleButtonTemplate"
+					class="with-arrow"
 				/>
 			</div>	
 			<template v-if="bindCard"> <!--  this template for already binded card -->
@@ -92,6 +93,7 @@
 								<BaseFormGroup 
 									:labelTitle="'CCV / CVV'"
 									:inputId="'cvvInput'"
+									:withInfo="true"
 									:errorMessage="hasError['cvv'].errorMessage"
 								>
 									<input 
@@ -103,6 +105,9 @@
 										id="cvvInput"
 										maxlength="3" 
 										>
+										<template v-slot:info-header>
+											<img class="cvv-info" src="@/assets/images/icon/cvv-label-info.png" />
+										</template>
 									</BaseFormGroup>
 							</div>
 							<div class="col-12">
@@ -212,6 +217,7 @@
 								<BaseFormGroup 
 									:labelTitle="'Tanggal Kadaluarsa'"
 									:inputId="'expiredDate'"
+									:withInfo="true"
 									:errorMessage="hasError['expiredDate'].errorMessage"
 								>
 									<input 
@@ -225,6 +231,10 @@
 										@keyup="changeFormat"
 										placeholder="MM/YY" 
 										>
+
+										<template v-slot:info-header>
+											<img class="cvv-info" src="@/assets/images/icon/expired-card-info.png" />
+										</template>
 									</BaseFormGroup>
 							</div>
 
@@ -232,6 +242,7 @@
 								<BaseFormGroup 
 									:labelTitle="'CCV / CVV'"
 									:inputId="'cvvInputNew'"
+									:withInfo="true"
 									:errorMessage="hasError['cvv'].errorMessage"
 								>
 									<input 
@@ -244,6 +255,10 @@
 										maxlength="3"
 										@keyup="this.$root.numberFormat"
 										>
+
+										<template v-slot:info-header>
+											<img class="cvv-info" src="@/assets/images/icon/cvv-label-info.png" />
+										</template>
 									</BaseFormGroup>
 							</div>
 							<div class="col-12">
