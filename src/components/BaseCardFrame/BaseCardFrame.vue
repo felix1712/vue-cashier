@@ -36,7 +36,7 @@ export default {
 
 <style lang="scss" scoped>
 	#baseCardFrame{
-		width: 85%;
+		width: 33rem;
 		border: 2px solid #E8E8E8;
 		background: #F8F8F8;
 		box-shadow: 4px 4px 10px rgba(235, 235, 235, 1);

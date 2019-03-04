@@ -2,6 +2,7 @@
 
 <script>
 import BaseLogo from '@/components/BaseLogo/BaseLogo.vue';
+import { EventBus } from '@/event-bus';
 
 export default {
 	name: 'PaymentSidebar',
@@ -14,6 +15,7 @@ export default {
 	data() {
 		return {
 			isActive: undefined,
+			clickCount: 0,
 			publicPath: [{
 				userId: 1,
 				id: 1,
@@ -58,7 +60,9 @@ export default {
 	methods: {
 		sendBankName(i, data) {
 			this.isActive = i;
+			this.dataToGo = data;
 			console.log('nama bank : ', data);
+			EventBus.$emit('i-got-clicked', data);
 		},
 	},
 };
@@ -85,7 +89,6 @@ export default {
 	// padding-top: 2rem;
 	// padding-bottom: 2rem;
 	.span-bank-name {
-		font-size: 16px;
 		color: #D1444A;
 		display: block;
 	}
@@ -96,9 +99,7 @@ export default {
 }
 
 .s-pad {
-	padding-left: 2rem;
-	padding-top: 2rem;
-	padding-bottom: 2rem;
+	padding: 1rem;
 	cursor: pointer;
 	border-bottom: 1px solid #E0D0D0;
 }
@@ -117,12 +118,10 @@ export default {
 	padding: 0 10px;
 	border-top: 1px solid #efefef;
 	.secure-image-bottom {
-		width: 200%;
+		width: 15em;
 		filter: grayscale(100%);
 	}
 }
-.left-border-recomended {
-	transform: translate(80%);
-}
+
 
 </style>
