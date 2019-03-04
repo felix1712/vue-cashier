@@ -9,7 +9,9 @@
                 </div>
                 <div class="det-content">
                     <p class="det-content-t">Batas Pembayaran</p>
-                    <Countdown/>
+                    <BaseCountdown
+                        :date="detailDate"
+                    />
                 </div>
             </div>
         </div>
@@ -42,18 +44,6 @@
                 </div>
             </div>
         </div>
-        <div class="card">
-            <div class="container">
-                <div class="det-title">Detail Pesanan</div>
-                <div class="det-content">
-                    <p class="det-content-t">Nomor Pesanan</p>
-                    <p class="det-content-b">73478474949</p>
-                </div>
-                <div class="det-content">
-                    <p class="det-content-t">Batas Pembayaran</p>
-                    <p class="det-content-b" id="countDown-order-detail">00H : 14M : 51D</p>
-                </div>
-            </div>
-        </div>
+        <ItemOrderDetails/>
     </div>
 </div>

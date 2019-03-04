@@ -1,10 +1,23 @@
 <template src="./index.html"></template>
 <script>
 
-import Countdown from '@/components/Countdown/Countdown.vue';
+import BaseCountdown from '@/components/BaseCountdown/BaseCountdown.vue';
+import ItemOrderDetails from '@/components/ItemOrderDetails/ItemOrderDetails.vue';
 
 export default {
   name: 'CashierDetail',
+  data(){
+    return {
+      detailDate:null,
+    }
+  },
+  components: {
+    BaseCountdown,
+    ItemOrderDetails,
+  },
+  mounted(){
+    this.detailDate='2019-03-06 08:15:00'
+  }
 };
 
 </script>
