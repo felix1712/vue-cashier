@@ -16,6 +16,5 @@ export default {
 		border-bottom: 1px solid #F5F5F5;
 		text-align: center;
 		font-size: 0.8rem;
-		padding: 1.5rem 4rem;
 	}
 </style>

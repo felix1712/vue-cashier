@@ -117,7 +117,7 @@ export default {
 	padding: 0 10px;
 	border-top: 1px solid #efefef;
 	.secure-image-bottom {
-		width: 200%;
+		width: 100%;
 		filter: grayscale(100%);
 	}
 }

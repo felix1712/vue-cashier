@@ -1,5 +1,8 @@
 <template src="./index.html"></template>
 <script>
+
+import Countdown from '@/components/Countdown/Countdown.vue';
+
 export default {
   name: 'CashierDetail',
 };
