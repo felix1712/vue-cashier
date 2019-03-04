@@ -1,35 +1,52 @@
 <div id="itemCreditCard">
-	<span>{{bindCard}}</span>
 		<div class="row s-px-20">
 			<div class="col-12 s-ta-c s-my-30">
 				<BaseSecondButton 
-					v-if="bindCard"
+					v-if="dummyCard"
 					@click.native="templateForm"
-					:title="'Gunakan Kartu Baru'"
-				/>
-
-				<BaseSecondButton 
-					v-else
-					@click.native="templateForm"
-					:title="'Kembali ke kartu saya'"
+					:title="titleButtonTemplate"
 				/>
 			</div>	
 			<template v-if="bindCard"> <!--  this template for already binded card -->
 				<div class="col-12">
 					<div class="row s-my-50">
 						<div class="col-1">
-							<a class="custom-arrow left"></a>
+							<a 
+								class="custom-arrow left" 
+								:class="{'disabled': currentCardActive == 0}"
+								@click="prevCard"
+							/>
 						</div>
 						<div class="col-10">
-							<BaseCardFrame :class="'m-0-a'" />
+							<transition 
+								v-for="(card, index) in dummyCard"
+								name="slide-fade"
+							>
+								<BaseCardFrame 
+									:cardNumber="card.nomorKartu"
+									:cardNameHolder="card.namaPemegang"
+									:cardExpired="card.expiredCard"
+									:cardType="card.typeCard"
+									:cardPromo="card.promo"
+									v-if="index == currentCardActive"
+									:class="'m-0-a'"
+								/>
+							</transition>
 						</div>
 						<div class="col-1">
-							<a class="custom-arrow right t-a-r"></a>
+							<a 
+								class="custom-arrow right t-a-r" 
+								:class="{'disabled': maxCardShow}"
+								@click="nextCard"
+							/>
 						</div>
 						<div class="col-12 dots s-mt-10 s-ta-c">
-							<span class="custom-dots active"></span>
-							<span class="custom-dots"></span>
-							<span class="custom-dots"></span>
+							<span 
+								v-for="(dots, index) in dummyCard.slice(0,3)"
+								class="custom-dots"
+								@click="dotsCard(index)"
+								:class="{'active':index == currentCardActive}"
+							/>
 						</div>
 					</div>
 					<div class="row">
@@ -45,7 +62,7 @@
 										@input="removeError('noCard')"
 										class="s-form-control"
 										:class="{'has-error' : hasError['noCard'].errorMessage != null}"
-										v-model="cardNoModel" 
+										v-model="cardNoModel"
 										id="cardNoInput"
 										readonly="true" 
 										>

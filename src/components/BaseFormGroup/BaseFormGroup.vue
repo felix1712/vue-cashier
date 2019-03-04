@@ -46,6 +46,7 @@ export default {
 			border-radius: 6px;
 			-webkit-box-shadow: 2px 0px 4px rgba(235,235,235, 0.5);
 			box-shadow: 2px 0px 4px rgba(235,235,235, 0.5);
+			letter-spacing: 1px;
 
 			&.has-error{
 				border: 1px solid red;
