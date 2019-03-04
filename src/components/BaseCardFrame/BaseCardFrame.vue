@@ -14,23 +14,23 @@ export default {
 
 		},
 		cardType: {
-			required: true
+			required: true,
 		},
 		cardPromo: {
 
 		},
 	},
 	computed: {
-		lastCardNumber(){
+		lastCardNumber() {
 			return this.cardNumber.substr(this.cardNumber.length - 4);
 		},
-		cardExpiredMonth(){
-			return this.cardExpired.substring(0,2);
+		cardExpiredMonth() {
+			return this.cardExpired.substring(0, 2);
 		},
-		cardExpiredYear(){
-			return this.cardExpired.substring(3,5);
-		}
-	}
+		cardExpiredYear() {
+			return this.cardExpired.substring(3, 5);
+		},
+	},
 };
 </script>
 

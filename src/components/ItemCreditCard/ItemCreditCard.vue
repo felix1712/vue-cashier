@@ -38,7 +38,7 @@ export default {
 					nomorKartu: '4556330069036953',
 					namaPemegang: 'Felix Andrean',
 					expiredCard: '12/24',
-					typeCard:  'visa',
+					typeCard: 'visa',
 					promo: true,
 				},
 				{
@@ -72,7 +72,7 @@ export default {
 					expiredCard: '06/20',
 					typeCard: 'mastercard',
 					promo: false,
-				}
+				},
 			],
 			currentCard: 0,
 		};
@@ -129,12 +129,12 @@ export default {
 			this.bindCard = !this.bindCard;
 		},
 
-		nextCard(){
+		nextCard() {
 			this.currentCard += 1;
 			this.updateFormData();
 		},
 
-		prevCard(){
+		prevCard() {
 			this.currentCard -= 1;
 			this.updateFormData();
 		},
@@ -145,9 +145,9 @@ export default {
 			this.holderNameModel = singleCardData.namaPemegang;
 		},
 
-		dotsCard(data){
+		dotsCard(data) {
 			this.currentCard = data;
-		}
+		},
 	},
 
 	computed: {
@@ -156,16 +156,15 @@ export default {
 		},
 
 		maxCardShow() {
-			return this.currentCardActive == this.dummyCard.length - 1;
+			return this.currentCardActive === this.dummyCard.length - 1;
 		},
 
 		titleButtonTemplate() {
-			if(this.bindCard){
-				return 'Gunakan Kartu Baru'
-			} else {
-				return 'Kembali ke kartu saya'
+			if (this.bindCard) {
+				return 'Gunakan Kartu Baru';
 			}
-		}
+			return 'Kembali ke kartu saya';
+		},
 	},
 
 	created() {
@@ -173,7 +172,7 @@ export default {
 	},
 
 	mounted() {
-		if(this.dummyCard){
+		if (this.dummyCard) {
 			this.bindCard = true;
 			const singleCardData = this.dummyCard[this.currentCardActive];
 			this.cardNoModel = singleCardData.nomorKartu;
@@ -181,7 +180,7 @@ export default {
 		} else {
 			this.bindCard = false;
 		}
-	}
+	},
 };
 </script>
 

@@ -21,6 +21,7 @@
 							<transition 
 								v-for="(card, index) in dummyCard"
 								name="slide-fade"
+								:key="index"
 							>
 								<BaseCardFrame 
 									:cardNumber="card.nomorKartu"
