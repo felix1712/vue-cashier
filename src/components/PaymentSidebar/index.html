@@ -1,25 +1,27 @@
 <div class="payment-sidebar  ">
 		<BaseLogo :logoWidth="30"/>
-			  <span class="s-ft-b">Metode Pembayaraan</span>
-			  <div 
-				class="row s-pad" 
-				v-for="(s, item) in publicPath" 
-				:key="item.id"
-				@click="sendBankName(s,s.bankName)"
-				:class = "{'active' : isActive === s  }">
-				 <div class="col-12 s-p-0">
-					<div class="row">
-					   <div class="col-9">
-						  <span class="s-dis-blok span-bank-name s-ft-r"> {{ s.bankName }} </span>	
-						  <img :src="s.imgPc">
-					   </div>
-					   <div class="col-2">
-						  <span class="border-with-doted" v-if="s.isRecommended">{{ s.isRecommended }}</span>
-					   </div>
+				<p class="title-sidebar">Metode Pembayaraan</p>
+				<div id="paymentMethod">
+					<div 
+					class="row s-pad" 
+					v-for="(s, item) in publicPath" 
+					:key="item.id"
+					@click="sendBankName(s,s.bankName)"
+					:class = "{'active' : isActive === s  }">
+					 <div class="col-12 s-p-0">
+						<div class="row">
+							 <div class="col-9">
+								<span class="s-dis-blok span-bank-name s-ft-r"> {{ s.bankName }} </span>	
+								<img :src="s.imgPc">
+							 </div>
+							 <div class="col-2">
+								<span class="border-with-doted" v-if="s.isRecommended">{{ s.isRecommended }}</span>
+							 </div>
+						</div>
+					 </div>
 					</div>
-				 </div>
-			  </div>
-			  <div class="col-3 img-secure">
+				</div>
+				<div class="col-12 img-secure">
 				 <img class="secure-image-bottom" src="https://img11.360buyimg.com/Indonesia/jfs/t1/5054/33/8602/366742/5ba9fda8Ee74d7886/c8f92aae659d2d44.png"><br>
 			 <!-- <div class="pleeease-click-me" @click="emitGlobalClickEvent()">123123</div> -->
 				</div>
