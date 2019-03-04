@@ -12,6 +12,12 @@ body{
 
 input{
 	margin: 0;
+
+	&.expired-date{
+		letter-spacing: 5px !important;
+		text-align: center;
+
+	}
 }
 
 // remove spinner input number
@@ -26,6 +32,11 @@ textarea,
 button {
 	&:focus{
     outline: none;
+	}
+
+	&:read-only{
+		background-color: rgba($v-grey, 0.1)!important;
+		cursor: default;
 	}
 }
 
@@ -100,10 +111,15 @@ label{
 
 .custom-arrow{
 	border: solid $v-red;
-  border-width: 0 3px 3px 0;
+  border-width: 0 3px 3px 0 !important;
   display: inline-block;
   padding: 0.8rem;
   border-radius: 2px;
+
+	&.disabled{
+		border: solid $v-grey;
+		pointer-events: none;
+	}
 
 	&.left{
 		transform: rotate(135deg);
@@ -124,4 +140,22 @@ label{
 		transform: rotate(45deg);
   	-webkit-transform: rotate(45deg);
 	}
+}
+
+//transitions
+.slide-fade-enter-active{
+	transition: all 1s ease;
+}
+
+.slide-fade-leave-active {
+	transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+	overflow: hidden;
+	visibility: visible;
+	opacity: 1;
+	position: absolute;
+}
+.slide-fade-enter, .slide-fade-leave-to
+/* .slide-fade-leave-active below version 2.1.8 */ {
+  transform: translateX(30px);
+  opacity: 0;
 }

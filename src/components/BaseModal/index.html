@@ -1,0 +1,23 @@
+<transition name="modal">
+	<div class="modal-mask">
+		<div class="modal-wrapper">
+			<div class="modal-container" :class="{'transparent' : backgroundTransparent }">
+				<a class="close-button" :class="[classCloseButton == 'corner' ? 'corner-header-close' : 'normal-close']" @click="$emit('close')">&times;</a>
+				<div class="modal-header">
+					<slot name="header">
+					</slot>
+				</div>
+
+				<div class="modal-body">
+					<slot name="body">
+					</slot>
+				</div>
+
+				<div class="modal-footer">
+					<slot name="footer">
+					</slot>
+				</div>
+			</div>
+		</div>
+	</div>
+</transition>

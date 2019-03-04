@@ -3,6 +3,34 @@
 <script>
 export default {
 	name: 'BaseCardFrame',
+	props: {
+		cardNumber: {
+			required: true,
+		},
+		cardNameHolder: {
+			required: true,
+		},
+		cardExpired: {
+
+		},
+		cardType: {
+			required: true,
+		},
+		cardPromo: {
+
+		},
+	},
+	computed: {
+		lastCardNumber() {
+			return this.cardNumber.substr(this.cardNumber.length - 4);
+		},
+		cardExpiredMonth() {
+			return this.cardExpired.substring(0, 2);
+		},
+		cardExpiredYear() {
+			return this.cardExpired.substring(3, 5);
+		},
+	},
 };
 </script>
 
@@ -49,9 +77,11 @@ export default {
 
 				&.logo-gateway{
 					text-align: center;
+					height: 50px;
+					max-height: 50px;
 
 					img{
-						width: 70px;
+						width: 50px;
 						height: auto;
 					}
 				}

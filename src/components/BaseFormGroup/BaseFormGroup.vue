@@ -1,8 +1,16 @@
 <template src="./index.html"></template>
 
 <script>
+import BaseModal from '@/components/BaseModal/BaseModal.vue';
+
 export default {
 	name: 'BaseFormGroup',
+	data() {
+		return {
+			openedModal: false,
+		}
+	},
+
 	props: {
 		labelTitle: {
 			type: String,
@@ -11,10 +19,29 @@ export default {
 		inputId: {
 			required: false,
 		},
+		withInfo: {
+			required: false
+		},
+		idModal: {
+			required: false,
+		},
 		errorMessage: {
 			required: false,
 		},
 	},
+
+	components: {
+		BaseModal,
+	},
+
+	methods: {
+		showModal(){
+			this.openedModal = true;
+		},
+		closeModal(){
+			this.openedModal = false;
+		}
+	}
 };
 </script>
 
@@ -30,6 +57,15 @@ export default {
 			margin-bottom: 20px;
 			font-weight: 700;
 			color: $v-label-input;
+
+			.info-label{
+		    border: 1.5px solid $v-red;
+		    border-radius: 100%;
+		    padding: 0px 7px;
+		    color: $v-red;
+		    cursor: pointer;
+		    margin-left: 10px;
+			}
 		}
 
 		.s-form-control{
@@ -46,6 +82,7 @@ export default {
 			border-radius: 6px;
 			-webkit-box-shadow: 2px 0px 4px rgba(235,235,235, 0.5);
 			box-shadow: 2px 0px 4px rgba(235,235,235, 0.5);
+			letter-spacing: 1px;
 
 			&.has-error{
 				border: 1px solid red;

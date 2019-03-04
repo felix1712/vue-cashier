@@ -3,19 +3,48 @@
 <script>
 import PaymentSidebar from '@/components/PaymentSidebar/PaymentSidebar.vue';
 import PaymentContainer from '@/components/PaymentContainer/PaymentContainer.vue';
+import BaseSubPayment from '@/components/BaseSubPayment/BaseSubPayment.vue';
+import { EventBus } from '@/event-bus';
 
 export default {
 	name: 'CashierPayment',
 	components: {
 		PaymentSidebar,
+		BaseSubPayment,
 		PaymentContainer,
 	},
+	data() {
+		return {
+			post: undefined,
+		};
+	},
+	mounted() {
+		EventBus.$on('i-got-clicked', (clickCount) => {
+			console.log('event received!', clickCount);
+			this.post = clickCount;
+			console.log('The user: ', clickCount); // Shows correct new user data
+		});
+		console.log('User outside eventbus:', this.post); // Shows empty user
+	},
+
 };
 </script>
 
 <style lang="scss" scoped>
 	#cashierPayment{
 		background: #fff;
-		box-shadow: 8px 0 10px 0px #EBEBEB
+		box-shadow: 8px 0 10px 0px #EBEBEB;
+
+		.equal-height{
+			display: flex;
+			display: -webkit-flex;
+			flex-wrap: wrap;
+			height: 100%;
+			min-height: 650px;
+
+			.payment-sidebar{
+				height: auto;
+			}
+		}
 	}
 </style>

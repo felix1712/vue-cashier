@@ -12,6 +12,13 @@ export default {
 		periodIst: {
 			required: false,
 		},
+		paymentMethod: { // dipakai di untuk gopay metode pembayaraan
+			required: false,
+		},
+		paymentImage: {
+			required: false,
+			type: String,
+		},
 		periodLabel: {
 			required: true,
 			type: String,
@@ -31,6 +38,7 @@ export default {
 		radioDisabled: {
 			required: false,
 		},
+		color: String,
 		radioChecked: {},
 	},
 
@@ -45,7 +53,10 @@ export default {
 
 <style lang="scss" scoped>
 	@import "@/assets/styles/customs/_variable.scss";
-
+	 .custom-radio-gojek {
+		 top: 56%;
+		 left:10%;
+	 }
 	.radio-period{
 		cursor: pointer;
 		color: $v-black;
@@ -69,7 +80,7 @@ export default {
 				transition: border .10s linear;
 				-webkit-transition: border .10s linear;
 
-				p, h5{
+				p, span, h5{
 					font-size: 0.8rem;
 				}
 
