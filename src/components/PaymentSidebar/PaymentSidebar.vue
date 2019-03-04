@@ -8,11 +8,11 @@ export default {
 	components: {
 		BaseLogo,
 	},
-	 beforeCreate() {
-    console.log('Nothing gets called before me!')
-  },
+	beforeCreate() {
+		console.log('Nothing gets called before me!');
+	},
 	data() {
-  		return {
+		return {
 			isActive: undefined,
 			publicPath: [{
 				userId: 1,
@@ -56,9 +56,9 @@ export default {
 		};
 	},
 	methods: {
-		sendBankName(i,data) {
-			this.isActive = i 
-			console.log('nama bank : ', data)
+		sendBankName(i, data) {
+			this.isActive = i;
+			console.log('nama bank : ', data);
 		},
 	},
 };

@@ -1,18 +1,20 @@
 <div id="itemCreditCard">
+	<span>{{bindCard}}</span>
 		<div class="row s-px-20">
-			<div class="col-12 s-ta-c s-mb-30">
+			<div class="col-12 s-ta-c s-my-30">
 				<BaseSecondButton 
+					v-if="bindCard"
+					@click.native="templateForm"
 					:title="'Gunakan Kartu Baru'"
 				/>
-			</div>	
-			<template v-for="(kadal, index) in kadalObject">
-					<BaseSubPayment 
-					:key="index"
-					
-					:object="kadal.nama" />
 
-			</template>
-			<template> <!--  this template for already binded card -->
+				<BaseSecondButton 
+					v-else
+					@click.native="templateForm"
+					:title="'Kembali ke kartu saya'"
+				/>
+			</div>	
+			<template v-if="bindCard"> <!--  this template for already binded card -->
 				<div class="col-12">
 					<div class="row s-my-50">
 						<div class="col-1">
@@ -52,7 +54,7 @@
 
 							<div class="col-8">
 								<BaseFormGroup 
-									:labelTitle="'Nama Anda'"
+									:labelTitle="'Nama Pemegang Kartu'"
 									:inputId="'holderNameInput'"
 									:errorMessage="hasError['holderName'].errorMessage"
 								>
@@ -148,6 +150,155 @@
 						</form>
 					</div>
 				</div>
+			</template>
+
+			<template v-else>
+				<div class="row">
+						<form @submit.prevent="checkForm">
+							<div class="col-12">
+								<BaseFormGroup 
+									:labelTitle="'Nomor Kartu'"
+									:inputId="'cardNoInput'"
+									:errorMessage="hasError['noCard'].errorMessage"
+								>
+									<input 
+										type="text" 
+										@input="removeError('noCard')"
+										class="s-form-control"
+										:class="{'has-error' : hasError['noCard'].errorMessage != null}"
+										v-model="cardNoModel" 
+										id="cardNoInput"
+										@keyup="this.$root.creditCardFormat"
+										>
+								</BaseFormGroup>
+							</div>
+
+							<div class="col-5">
+								<BaseFormGroup 
+									:labelTitle="'Nama Pemegang Kartu'"
+									:inputId="'holderNameInput'"
+									:errorMessage="hasError['holderName'].errorMessage"
+								>
+									<input 
+										type="text" 
+										@input="removeError('holderName')"
+										class="s-form-control"
+										:class="{'has-error' : hasError['holderName'].errorMessage != null}"
+										v-model="holderNameModel" 
+										id="holderNameInput"
+										>
+								</BaseFormGroup>
+							</div>
+
+							<div class="col-4">
+								<BaseFormGroup 
+									:labelTitle="'Tanggal Kadaluarsa'"
+									:inputId="'expiredDate'"
+									:errorMessage="hasError['expiredDate'].errorMessage"
+								>
+									<input 
+										type="text" 
+										@input="removeError('expiredDate')"
+										class="s-form-control expired-date"
+										:class="{'has-error' : hasError['expiredDate'].errorMessage != null}"
+										v-model="expiredDateModel" 
+										id="expiredDate"
+										maxlength="5"
+										@keyup="changeFormat"
+										placeholder="MM/YY" 
+										>
+									</BaseFormGroup>
+							</div>
+
+							<div class="col-3">
+								<BaseFormGroup 
+									:labelTitle="'CCV / CVV'"
+									:inputId="'cvvInputNew'"
+									:errorMessage="hasError['cvv'].errorMessage"
+								>
+									<input 
+										type="text" 
+										@input="removeError('cvv')"
+										class="s-form-control"
+										:class="{'has-error' : hasError['cvv'].errorMessage != null}"
+										v-model="cvvModel" 
+										id="cvvInputNew"
+										maxlength="3"
+										@keyup="this.$root.numberFormat"
+										>
+									</BaseFormGroup>
+							</div>
+							<div class="col-12">
+								<label class="form-group">Periods</label>
+								<div class="payment-periods">
+									<div class="col-4">
+										<BaseRadioPeriod 
+											:periodLabel="'Full Payment'"
+											:periodPrice="'150,000'"
+											:radioName="'periode'"
+											:radioId="'fullPayment'"
+											:radioValue="'FP'"
+											:radioChecked="periodValue"
+											v-model="periodValue"
+										>
+										</BaseRadioPeriod>
+									</div>
+
+									<div class="col-4">
+										<BaseRadioPeriod 
+											:periodLabel="'3'"
+											:periodPrice="'150,000'"
+											:radioName="'periode'"
+											:radioId="'3-periods'"
+											:radioValue="3"
+											:radioChecked="periodValue"
+											:radioDisabled="true"
+											periodIst="true"
+											v-model="periodValue"
+										>
+										</BaseRadioPeriod>
+									</div>
+
+									<div class="col-4">
+										<BaseRadioPeriod 
+											:periodLabel="'4'"
+											:periodPrice="'150,000'"
+											:radioName="'periode'"
+											:radioId="'4-periods'"
+											:radioValue="4"
+											:radioChecked="periodValue"
+											periodIst="true"
+											v-model="periodValue"
+										>
+										</BaseRadioPeriod>
+									</div>
+
+									<div class="col-4">
+										<BaseRadioPeriod 
+											:periodLabel="'5'"
+											:periodPrice="'150,000'"
+											:radioName="'periode'"
+											:radioId="'5-periods'"
+											:radioValue="5"
+											:radioChecked="periodValue"
+											periodIst="true"
+											v-model="periodValue"
+										>
+										</BaseRadioPeriod>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-12">
+								<BaseCheckbox
+									:labelCheckbox="'Saya setuju untuk menyimpan informasi pembayaran'"
+									:idCheckbox="'saveNewCard'"
+									v-model="saveNewCardModel"
+									class="s-tc-red s-mt-30"
+								/>
+							</div>
+						</form>
+					</div>
 			</template>
 		</div>
 </div>
