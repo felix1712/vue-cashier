@@ -32,12 +32,21 @@ export default {
 				isRecommended: 'Recommended',
 				completed: false,
 			},
+
+			{
+				userId: 1,
+				id: 3,
+				imgPc: 'https://img11.360buyimg.com/Indonesia/jfs/t1/32995/37/4296/4206/5c7ccb5cE5a1f2553/18c1527a92d728ba.png',
+				isRecommended: 'Recommended',
+				bankName: 'Virtual Account',
+				completed: false,
+			},
 			{
 				userId: 1,
 				id: 3,
 				imgPc: 'https://img11.360buyimg.com/Indonesia/jfs/t1/15172/6/7944/4206/5c6fd984Ee66c38c5/b309b92f15963de0.png',
 				bankName: 'Bank Transfer',
-				isRecommended: 'Recommended',
+		
 				completed: false,
 			},
 			{

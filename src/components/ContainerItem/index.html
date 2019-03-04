@@ -1,3 +1,10 @@
 <div id="containerItem">
-	<ItemCreditCard />
+	<template v-if="post === 'Kartu Kredit /Debit'">
+			<ItemCreditCard />
+
+	</template>
+	<template v-if="post === 'Uang Elektronik' || post === undefined">
+			<ItemGopay></ItemGopay>
+	</template>
+
 </div>
