@@ -58,7 +58,7 @@ export default {
 <style lang="scss" scoped>
 	@import "@/assets/styles/customs/_variable.scss";
 	 .custom-radio-gojek {
-		 top: 56%;
+		 top: 5.4rem;
 		 left:10%;
 	 }
 	.radio-period{

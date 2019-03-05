@@ -9,11 +9,13 @@
 							<div class="label-frame s-pb-16">
 								<span class="s-mr-20">{{periodLabel}}</span>
 								<img :src="paymentImage" alt="Payment Image">
-								<slot></slot>
+							
 							</div>
+	
 						</label>
-					</div>
 					
+					</div>
+					<slot></slot>
 		</div>
 		<div v-else>
 				<div class="radio-period" :class="{'checked' : radioChecked == radioValue, 'disabled': radioDisabled}">
