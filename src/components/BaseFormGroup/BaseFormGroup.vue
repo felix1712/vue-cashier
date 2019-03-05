@@ -8,7 +8,7 @@ export default {
 	data() {
 		return {
 			openedModal: false,
-		}
+		};
 	},
 
 	props: {
@@ -20,7 +20,7 @@ export default {
 			required: false,
 		},
 		withInfo: {
-			required: false
+			required: false,
 		},
 		idModal: {
 			required: false,
@@ -30,7 +30,7 @@ export default {
 		},
 		infoInputMessage: {
 			required: false,
-		}
+		},
 	},
 
 	components: {
@@ -38,13 +38,13 @@ export default {
 	},
 
 	methods: {
-		showModal(){
+		showModal() {
 			this.openedModal = true;
 		},
-		closeModal(){
+		closeModal() {
 			this.openedModal = false;
-		}
-	}
+		},
+	},
 };
 </script>
 
@@ -62,12 +62,12 @@ export default {
 			color: $v-label-input;
 
 			.info-label{
-		    border: 1.5px solid $v-red;
-		    border-radius: 100%;
-		    padding: 0px 7px;
-		    color: $v-red;
-		    cursor: pointer;
-		    margin-left: 10px;
+				border: 1.5px solid $v-red;
+				border-radius: 100%;
+				padding: 0px 7px;
+				color: $v-red;
+				cursor: pointer;
+				margin-left: 10px;
 			}
 		}
 

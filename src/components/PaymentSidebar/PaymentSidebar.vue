@@ -92,7 +92,7 @@ export default {
 		border-bottom: 1px solid #E0D0D0;
 
 		&:first-child{
-			border-top: 1px solid #E0D0D0;		
+			border-top: 1px solid #E0D0D0;
 		}
 	}
 }
