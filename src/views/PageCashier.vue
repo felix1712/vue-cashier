@@ -3,7 +3,7 @@
 		<div class="row">
 			<CashierPayment />
 			<CashierDetail />
-			<BaseFooter />
+			<BaseFooter :totalPrice="totalPrice" />
 		</div>
 	</div>
 </template>
@@ -20,6 +20,11 @@ export default {
 		CashierDetail,
 		BaseFooter,
 	},
+	data() {
+		return {
+			totalPrice: 112500,
+		}
+	}
 };
 </script>
 
