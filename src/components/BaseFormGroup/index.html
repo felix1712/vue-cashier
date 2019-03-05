@@ -1,5 +1,25 @@
 <div class="form-group">
-	<label :for="inputId">{{labelTitle}}</label>
+	<label :for="inputId">{{labelTitle}} <span class="info-label" @click="showModal(idModal)" v-if="withInfo">i</span></label>
 	<slot></slot>
 	<small v-if="errorMessage" class="field-text-error">{{errorMessage}}</small>
+	<small v-if="infoInputMessage" v-show="!errorMessage" class="gi">{{infoInputMessage}}</small>
+
+	<BaseModal 
+		v-if="openedModal"
+		:classCloseButton="'corner'"
+		:backgroundTransparent="true"
+		@close="closeModal"
+	>
+		<template v-slot:header>
+			<slot name="info-header"></slot>
+		</template>
+
+		<template v-slot:body>
+			<slot name="info-body"></slot>
+		</template>
+
+		<template v-slot:footer>
+			<slot name="info-footer"></slot>
+		</template>
+	</BaseModal>
 </div>

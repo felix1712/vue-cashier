@@ -19,6 +19,18 @@ export default {
 <style lang="scss" scoped>
 	#cashierPayment{
 		background: #fff;
-		box-shadow: 8px 0 10px 0px #EBEBEB
+		box-shadow: 8px 0 10px 0px #EBEBEB;
+
+		.equal-height{
+			display: flex;
+			display: -webkit-flex;
+			flex-wrap: wrap;
+			height: 100%;
+			min-height: 650px;
+
+			.payment-sidebar{
+				height: auto;
+			}
+		}
 	}
 </style>
