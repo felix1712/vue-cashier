@@ -80,20 +80,20 @@ export default {
 	@import "@/assets/styles/customs/_variable.scss";
 
 	#paymentSidebar{
-		.title-sidebar{
-			font-size: 1.1rem;
-			margin-bottom: 20px;
-			font-weight: bold;
-			padding: 0 1rem;
+
+		.title-sidebar-frame{
+			padding: 0 10px;
+			
+			.title-sidebar{
+				font-size: 1.1rem;
+				font-weight: bold;
+				padding: 1rem 0;
+				border-bottom: 1px solid $v-border-sidebar-label;
+			}
 		}
 
 		#paymentMethod{
 			.row{
-				&:first-child{
-					.s-pad{
-						border-top: $border-normal;
-					}
-				}
 				.s-pad {
 					padding: 1.5rem 0;
 					cursor: pointer;
@@ -110,7 +110,6 @@ export default {
 					width: 102%;
 
 					.s-pad{
-						border-top: solid transparent !important;
 						border-bottom: solid transparent !important;
 					}
 					.span-bank-name {
