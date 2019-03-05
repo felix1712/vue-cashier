@@ -113,7 +113,7 @@ export default {
 					border-left: 3px solid $v-red;
 					height: auto;
 					color: #CB2E36;
-					width: 102%;
+					width: 100%;
 
 					.s-pad{
 						border-bottom: solid transparent !important;
