@@ -76,83 +76,75 @@ export default {
 };
 </script>
 
-<style scoped lang='scss'>
-.text-method {
-	font-size: 16px;
-	color: #464646;
-	font-weight: bold;
-	padding-bottom: 3%;
-}
+<style lang="scss" scoped>
+	@import "@/assets/styles/customs/_variable.scss";
 
-.s-dis-blok {
-	display: block;
-}
+	#paymentSidebar{
+		.title-sidebar{
+			font-size: 1.1rem;
+			margin-bottom: 20px;
+			font-weight: bold;
+			padding: 0 1rem;
+		}
 
-.title-sidebar{
-	font-size: 1.2rem;
-	margin-bottom: 20px;
-}
+		#paymentMethod{
+			.row{
+				&:first-child{
+					.s-pad{
+						border-top: $border-normal;
+					}
+				}
+				.s-pad {
+					padding: 1.5rem 0;
+					cursor: pointer;
+					border-bottom: $border-normal;
+				}
 
-#paymentMethod{
-	.s-pad {
-		padding: 1.5rem 1rem;
-		cursor: pointer;
-		border-bottom: 1px solid #E0D0D0;
+				&.active {
+					position: relative;
+					background: #FFFBFB;
+					box-shadow: 5px 5px 10px 0 rgba(231, 231, 231, 0.5);
+					border-left: 3px solid $v-red;
+					height: auto;
+					color: #CB2E36;
+					width: 102%;
 
-		&:first-child{
-			border-top: 1px solid #E0D0D0;
+					.s-pad{
+						border-top: solid transparent !important;
+						border-bottom: solid transparent !important;
+					}
+					.span-bank-name {
+						color: #D1444A;
+						display: block;
+					}
+				}
+			}
+		}
+
+		.payment-method-recomended{
+			position: absolute;
+			top: 0;
+			right: 1rem;
+
+			.border-with-doted {
+				font-size: 8px;
+				border: 1px dotted $v-red;
+				border-radius: 35px;
+				padding: 1px 10px;
+				background: #FFFBFB;
+				color: $v-red;
+			}
+		}
+
+		.img-secure {
+			position: absolute;
+			bottom: 0;
+			margin: 20px 0;
+			text-align: center;
+			.secure-image-bottom {
+				width: 100%;
+				filter: grayscale(100%);
+			}
 		}
 	}
-}
-
-.active {
-	position: relative;
-	background: #FFFBFB;
-	box-shadow: 5px 5px 10px 0 rgba(231, 231, 231, 0.5);
-	border-top: solid transparent !important;
-	border-bottom: solid transparent !important;
-	border-left: 3px solid #CA2F35;
-	height: auto;
-	color: #CB2E36;
-	width: 102%;
-	.span-bank-name {
-		color: #D1444A;
-		display: block;
-	}
-}
-
-.s-dis-blok {
-	display: block;
-}
-
-.s-pad {
-	padding: 1.7rem;
-	cursor: pointer;
-	border-bottom: 1px solid #E0D0D0;
-		&:last-child {
-			border-bottom: 1px solid red;
-		}
-}
-
-.border-with-doted {
-	font-size: 8px;
-	border: 1px dotted #CB2E36;
-	border-radius: 35px;
-	padding: 5px;
-	background: #FFFBFB;
-	color: #CB2E36;
-}
-
-.img-secure {
-	position: absolute;
-	bottom: 0;
-	margin: 20px 0;
-	text-align: center;
-	.secure-image-bottom {
-		width: 100%;
-		filter: grayscale(100%);
-	}
-}
-
-
 </style>
