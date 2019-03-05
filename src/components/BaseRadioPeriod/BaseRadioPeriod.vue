@@ -1,11 +1,14 @@
 <template src="./index.html"></template>
 
 <script>
+import { EventBus } from '@/event-bus';
+
 export default {
 	name: 'BaseRadioPeriod',
 	data() {
 		return {
 			picked: null,
+			gotClicked: undefined,
 		};
 	},
 	props: {
@@ -46,6 +49,8 @@ export default {
 		radioChange(value) {
 			this.$emit('input', value);
 			this.picked = value;
+			this.gotClicked = true;
+			EventBus.$emit('PaymentGotClicked', this.gotClicked);
 		},
 	},
 };
@@ -53,8 +58,9 @@ export default {
 
 <style lang="scss" scoped>
 	@import "@/assets/styles/customs/_variable.scss";
+
 	.custom-radio-gojek {
-		top: 56%;
+		top: 5.4rem;
 		left:10%;
 	}
 	.radio-period{
