@@ -11,8 +11,7 @@ export default {
 	components: {
 		ItemCreditCard,
 		ItemGopay,
-		ItemVa
-
+		ItemVa,
 	},
 
 	data() {

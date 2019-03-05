@@ -128,7 +128,7 @@ export default {
 
 		templateForm() {
 			this.bindCard = !this.bindCard;
-			if(!this.bindCard){
+			if (!this.bindCard) {
 				this.cardNoModel = null;
 				this.holderNameModel = null;
 			} else {

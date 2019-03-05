@@ -1,32 +1,21 @@
-
-
 <template src="./index.html"></template>
 
 <script>
 import BaseRadioPeriod from '@/components/BaseRadioPeriod/BaseRadioPeriod.vue';
 import { EventBus } from '@/event-bus';
+
 export default {
-
 	name: 'ItemVa',
-        components: {
-        BaseRadioPeriod,
-        EventBus
-	},
-	computed: {
-		type() {
-			if (this.to) {
-				return 'router-link';
-			}
-
-			return 'a';
-		},
+	components: {
+		BaseRadioPeriod,
+		EventBus,
 	},
 	data() {
 		return {
 			cardNoModel: null,
 			holderNameModel: null,
 			cvvModel: null,
-            periodValue: null,
+			periodValue: null,
 			hasError: {
 				noCard: {
 					errorMessage: null,
@@ -47,11 +36,10 @@ export default {
 		title: {
 			required: false,
 		},
-    },
-    	mounted() {
+	},
+	mounted() {
 		EventBus.$on('PaymentGotClicked', (clickCount) => {
 			console.log('event received!', clickCount);
-			// this.post = clickCount;
 			console.log('The user 12321: ', clickCount); // Shows correct new user data
 		});
 		console.log('User outside eventbus:', this.post); // Shows empty user
@@ -62,7 +50,7 @@ export default {
 
 <style lang="scss" scoped>
 .custom-radio {
-    color: pink !important;
-    background: red !important;
+	color: pink !important;
+	background: red !important;
 }
 </style>

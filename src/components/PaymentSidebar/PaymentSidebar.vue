@@ -46,7 +46,6 @@ export default {
 				id: 3,
 				imgPc: 'https://img11.360buyimg.com/Indonesia/jfs/t1/15172/6/7944/4206/5c6fd984Ee66c38c5/b309b92f15963de0.png',
 				bankName: 'Bank Transfer',
-		
 				completed: false,
 			},
 			{
@@ -101,7 +100,7 @@ export default {
 		border-bottom: 1px solid #E0D0D0;
 
 		&:first-child{
-			border-top: 1px solid #E0D0D0;		
+			border-top: 1px solid #E0D0D0;
 		}
 	}
 }
@@ -130,9 +129,9 @@ export default {
 	padding: 1.7rem;
 	cursor: pointer;
 	border-bottom: 1px solid #E0D0D0;
-    &:last-child {
-       	border-bottom: 1px solid red;
-    }
+		&:last-child {
+			border-bottom: 1px solid red;
+		}
 }
 
 .border-with-doted {
