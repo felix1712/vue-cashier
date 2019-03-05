@@ -2,6 +2,9 @@
 
 <script>
 import BaseRadioPeriod from '@/components/BaseRadioPeriod/BaseRadioPeriod.vue';
+
+import BaseFormGroup from '@/components/BaseFormGroup/BaseFormGroup.vue';
+
 import { EventBus } from '@/event-bus';
 
 export default {
@@ -9,6 +12,7 @@ export default {
 	components: {
 		BaseRadioPeriod,
 		EventBus,
+		BaseFormGroup
 	},
 	data() {
 		return {
@@ -39,7 +43,21 @@ export default {
 			cvvModel: null,
 			periodValue: null,
             gotClicked: undefined,
-            virtuals: '',
+			virtuals: '',
+						hasError: {
+				noCard: {
+					errorMessage: null,
+				},
+				holderName: {
+					errorMessage: null,
+				},
+				cvv: {
+					errorMessage: null,
+				},
+				expiredDate: {
+					errorMessage: null,
+				},
+			},
 		};
 	},
 	mounted() {
@@ -57,6 +75,10 @@ export default {
     .wrapper-input {
         border: 1px solid red;
         height: 16rem;
-    }
+	}
+	.text-account-name {
+		font-size: 14px;
+		color: #726E6E;
+	}
 }
 </style>

@@ -16,10 +16,26 @@
                         :radioId="'virtualAccount-'+item.id" 
                         :paymentImage="item.image">
                         <slot>
-                            <div class="col-12 wrapper-input" v-if="virtuals == item.id">
-                                <span>item id : {{ item.id }} -- periode value : {{periodValue  }} -- index : {{ index }}
-                                    <br>
-                                    {{ item || json }}</span>
+                            <div class="col-12 wrapper-input s-p-34 " v-if="virtuals == item.id">
+                                <div class="col-9 "  >
+                                        <BaseFormGroup 
+                                        :labelTitle="'Nama Pemilik Rekening'"
+                                    >
+                                        <input 
+                                            type="text" 
+                                            class="s-form-control"
+                                            >
+                                    </BaseFormGroup>   
+                                    <BaseFormGroup 
+                                    :labelTitle="'Nomor Handphone / Email '"
+                                >
+                                    <input 
+                                        type="text" 
+                                        class="s-form-control"
+                                        >
+                                </BaseFormGroup>   
+                                </div>
+ 
                             </div>                       
                         </slot>
                         </BaseRadioPeriod>
@@ -28,4 +44,4 @@
                 </div>
             </template>
         </div>                                          
-    </div>
+</div>
