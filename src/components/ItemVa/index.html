@@ -17,9 +17,10 @@
                         :paymentImage="item.image">
                         <slot>
                             <div class="col-12 wrapper-input s-p-34 " v-if="virtuals == item.id">
-                                <div class="col-9 "  >
+                                <div class="col-12 "  >
                                         <BaseFormGroup 
                                         :labelTitle="'Nama Pemilik Rekening'"
+                                        infoInputMessage="Mohon masukkan Nama pemilik rekening bank yang akan anda gunakan untuk melakukan transfer."
                                     >
                                         <input 
                                             type="text" 
@@ -28,6 +29,7 @@
                                     </BaseFormGroup>   
                                     <BaseFormGroup 
                                     :labelTitle="'Nomor Handphone / Email '"
+                                    infoInputMessage="Informasi Bank Transfer akan dikirimkan melalui Handphone dan Email Anda"
                                 >
                                     <input 
                                         type="text" 
