@@ -72,7 +72,9 @@ export default {
 	.custom-radio-gojek {
 		top: auto;
 		margin: 3%;
-		margin-left: 3em;
+	}
+	.custome-width {
+		width: 91% !important;
 	}
 	.with-border-custom {
 		border-radius: 7px 7px 0px 0px !important;
