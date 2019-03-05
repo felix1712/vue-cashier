@@ -113,60 +113,18 @@
 							<div class="col-12">
 								<label class="form-group">Periods</label>
 								<div class="payment-periods">
-									<div class="col-4">
-										<BaseRadioPeriod 
-											:periodLabel="'Full Payment'"
-											:periodPrice="'150,000'"
-											:radioName="'periode'"
-											:radioId="'fullPayment'"
-											:radioValue="'FP'"
+									<div class="col-4" v-for="(period, index) in dummyPeriods">
+										<BaseRadioPeriod
+											:periodLabel="period.periodName"
+											:periodPrice="period.periodPrice"
+											:radioName="'periods'"
+											:radioId="'periods'+period.id"
+											:radioValue="[period.periodName == 'Full Payment'?'FP':period.periodName]"
+											:radioDisabled="period.disabled"
+											:periodIst="period.periodName != 'Full Payment'"
 											:radioChecked="periodValue"
 											v-model="periodValue"
-										>
-										</BaseRadioPeriod>
-									</div>
-
-									<div class="col-4">
-										<BaseRadioPeriod 
-											:periodLabel="'3'"
-											:periodPrice="'150,000'"
-											:radioName="'periode'"
-											:radioId="'3-periods'"
-											:radioValue="3"
-											:radioChecked="periodValue"
-											:radioDisabled="true"
-											periodIst="true"
-											v-model="periodValue"
-										>
-										</BaseRadioPeriod>
-									</div>
-
-									<div class="col-4">
-										<BaseRadioPeriod 
-											:periodLabel="'4'"
-											:periodPrice="'150,000'"
-											:radioName="'periode'"
-											:radioId="'4-periods'"
-											:radioValue="4"
-											:radioChecked="periodValue"
-											periodIst="true"
-											v-model="periodValue"
-										>
-										</BaseRadioPeriod>
-									</div>
-
-									<div class="col-4">
-										<BaseRadioPeriod 
-											:periodLabel="'5'"
-											:periodPrice="'150,000'"
-											:radioName="'periode'"
-											:radioId="'5-periods'"
-											:radioValue="5"
-											:radioChecked="periodValue"
-											periodIst="true"
-											v-model="periodValue"
-										>
-										</BaseRadioPeriod>
+										/>
 									</div>
 								</div>
 							</div>
@@ -264,60 +222,17 @@
 							<div class="col-12">
 								<label class="form-group">Periods</label>
 								<div class="payment-periods">
-									<div class="col-4">
-										<BaseRadioPeriod 
-											:periodLabel="'Full Payment'"
-											:periodPrice="'150,000'"
-											:radioName="'periode'"
-											:radioId="'fullPayment'"
-											:radioValue="'FP'"
+									<div class="col-4" v-for="(period, index) in dummyPeriods">
+										<BaseRadioPeriod
+											:periodLabel="period.periodName"
+											:periodPrice="period.periodPrice"
+											:radioName="'periods'"
+											:radioId="'periods'+period.id"
+											:radioValue="[period.periodName == 'Full Payment'?'FP':period.periodName]"
+											:periodIst="period.periodName != 'Full Payment'"
 											:radioChecked="periodValue"
 											v-model="periodValue"
-										>
-										</BaseRadioPeriod>
-									</div>
-
-									<div class="col-4">
-										<BaseRadioPeriod 
-											:periodLabel="'3'"
-											:periodPrice="'150,000'"
-											:radioName="'periode'"
-											:radioId="'3-periods'"
-											:radioValue="3"
-											:radioChecked="periodValue"
-											:radioDisabled="true"
-											periodIst="true"
-											v-model="periodValue"
-										>
-										</BaseRadioPeriod>
-									</div>
-
-									<div class="col-4">
-										<BaseRadioPeriod 
-											:periodLabel="'4'"
-											:periodPrice="'150,000'"
-											:radioName="'periode'"
-											:radioId="'4-periods'"
-											:radioValue="4"
-											:radioChecked="periodValue"
-											periodIst="true"
-											v-model="periodValue"
-										>
-										</BaseRadioPeriod>
-									</div>
-
-									<div class="col-4">
-										<BaseRadioPeriod 
-											:periodLabel="'5'"
-											:periodPrice="'150,000'"
-											:radioName="'periode'"
-											:radioId="'5-periods'"
-											:radioValue="5"
-											:radioChecked="periodValue"
-											periodIst="true"
-											v-model="periodValue"
-										>
-										</BaseRadioPeriod>
+										/>
 									</div>
 								</div>
 							</div>
