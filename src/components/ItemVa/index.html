@@ -2,17 +2,30 @@
         <div class="row s-px-20">
             <template>
                 <div class="col-12">
-                    <div class="row s-my-50">
-                        <BaseRadioPeriod :periodLabel="'GO-PAY 123123'" :radioValue="3" :radioChecked="periodValue" v-model="periodValue" :radioName="'123'" :paymentMethod=true :periodPrice="'150,000'" :radioId="'fullPayment'" :paymentImage="'https://img11.360buyimg.com/Indonesia/jfs/t1/10395/16/11504/1476/5c6fda8eE3bdbddf7/c14dc0e056773836.png'">
-                            <div>
-                                <div class="col-12 wrapper-input">
-                                    <span>123 {{ gotClicked }}</span>
-                                </div>                       
-                            </div>
+                    <div class="row s-my-50" 
+                        v-for="(item, index) in bankArray" 
+                        :key="index">
+                        <BaseRadioPeriod 
+                        :periodLabel="item.name" 
+                        :radioValue="item.id" 
+                        :radioChecked="virtuals" 
+                        v-model="virtuals" 
+                        :radioName="'virtualAccount'" 
+                        :paymentMethod=true 
+                        :periodPrice="'150,000'" 
+                        :radioId="'virtualAccount-'+item.id" 
+                        :paymentImage="item.image">
+                        <slot>
+                            <div class="col-12 wrapper-input" v-if="virtuals == item.id">
+                                <span>item id : {{ item.id }} -- periode value : {{periodValue  }} -- index : {{ index }}
+                                    <br>
+                                    {{ item || json }}</span>
+                            </div>                       
+                        </slot>
                         </BaseRadioPeriod>
     
                     </div>
                 </div>
             </template>
-        </div>
+        </div>                                          
     </div>

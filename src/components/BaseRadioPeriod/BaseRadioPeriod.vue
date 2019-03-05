@@ -50,7 +50,8 @@ export default {
 			this.$emit('input', value);
 			this.picked = value;
 			this.gotClicked = true;
-			EventBus.$emit('PaymentGotClicked', this.gotClicked);
+			console.log('value:', value);
+			EventBus.$emit('PaymentGotClicked', value);
 		},
 	},
 };
@@ -60,8 +61,9 @@ export default {
 	@import "@/assets/styles/customs/_variable.scss";
 
 	.custom-radio-gojek {
-		top: 5.4rem;
-		left:10%;
+		top: auto;
+		margin: 3%;
+    	margin-left: 3em;
 	}
 	.with-border-custom {
 		border-radius: 7px 7px 0px 0px !important;

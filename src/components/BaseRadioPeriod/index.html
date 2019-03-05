@@ -1,13 +1,22 @@
 <!-- <template> -->
 		<div v-if="paymentMethod">
-				<div class="radio-period with-border-custom" :class="{'checked' : radioChecked == radioValue, 'disabled': radioDisabled}">
+				<div class="radio-period with-border-custom" 
+					:class="{'checked' : radioChecked == radioValue, 'disabled': radioDisabled}">
 						<label :for="radioId">
-							<div class="radio-frame" :class = "color">
-								<input :name="radioName" type="radio" :id="radioId"  :value="radioValue" @change="radioChange(radioValue)" v-model="picked" :disabled="radioDisabled">
+							<div class="radio-frame" 
+								:class = "color">
+								<input 
+								:name="radioName" 
+								type="radio" 
+								:id="radioId"  
+								:value="radioValue" 
+								@change="radioChange(radioValue)" 
+								v-model="picked" 
+								:disabled="radioDisabled">
 								<div  class="custom-radio custom-radio-gojek"></div>
 							</div>
 							<div class="label-frame s-pb-16">
-								<span class="s-mr-20">{{periodLabel}}</span>
+								<span class="s-mr-20">{{ periodLabel }}</span>
 								<img :src="paymentImage" alt="Payment Image">
 							
 							</div>

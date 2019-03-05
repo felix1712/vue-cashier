@@ -12,38 +12,41 @@ export default {
 	},
 	data() {
 		return {
-			gotClicked: undefined,
-			cardNoModel: null,
-			holderNameModel: null,
+			bankArray: [
+				{
+					id: 11,
+					name: 'Bank Central Asia',
+					nameAbbr: 'BCA',
+					image: '',
+				},
+
+				{
+					id: 12,
+					name: 'Bank Negara Indonesia',
+					nameAbbr: 'BNI',
+					image: '',
+				},
+
+				{
+					id: 13,
+					name: 'Bank Rakyat Indonesia',
+					nameAbbr: 'BRI',
+					image: '',
+				},
+
+
+			],
 			cvvModel: null,
 			periodValue: null,
-			hasError: {
-				noCard: {
-					errorMessage: null,
-				},
-				holderName: {
-					errorMessage: null,
-				},
-				cvv: {
-					errorMessage: null,
-				},
-			},
+            gotClicked: undefined,
+            virtuals: '',
 		};
-	},
-	props: {
-		object: {
-			type: String,
-		},
-		title: {
-			required: false,
-		},
 	},
 	mounted() {
 		EventBus.$on('PaymentGotClicked', (data) => {
 			this.gotClicked = data;
-			console.log('The user 12321: ', data); // Shows correct new user data
+			console.log(data);
 		});
-		console.log('User outside eventbus:', this.post); // Shows empty user
 	},
 
 };

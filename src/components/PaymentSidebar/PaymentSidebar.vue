@@ -69,7 +69,6 @@ export default {
 		sendBankName(i, data) {
 			this.isActive = i;
 			this.dataToGo = data;
-			console.log('nama bank : ', data);
 			EventBus.$emit('i-got-clicked', data);
 		},
 	},
@@ -144,7 +143,7 @@ export default {
 }
 
 .img-secure {
-	position: absolute;
+	position: inherit;
 	bottom: 0;
 	margin: 20px 0;
 	text-align: center;
