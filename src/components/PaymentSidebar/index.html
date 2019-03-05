@@ -8,7 +8,7 @@
 	</div>
 	<div id="paymentMethod">
 		<div 
-			class="row" 
+			class="row payment-sidebar-item" 
 			v-for="(s, item) in publicPath" 
 			:key="item.id"
 			@click="sendBankName(s,s.bankName)"
@@ -21,7 +21,8 @@
 						<img :src="s.imgPc">
 					</div>
 					<div class="payment-method-recomended">
-						<span class="border-with-doted" v-if="s.isRecommended">{{ s.isRecommended }}</span>
+						<span class="border-with-doted yellow" v-if="s.isPromo">Promo</span>
+						<span class="border-with-doted red" v-if="s.isRecommended">Recomended</span>
 					</div>
 				</div>
 			</div>
