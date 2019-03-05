@@ -105,7 +105,7 @@
 										id="cvvInput"
 										maxlength="3" 
 										>
-										<template v-slot:info-header>
+										<template slot="info-header">
 											<img class="cvv-info" src="@/assets/images/icon/cvv-label-info.png" />
 										</template>
 									</BaseFormGroup>
@@ -232,7 +232,7 @@
 										placeholder="MM/YY" 
 										>
 
-										<template v-slot:info-header>
+										<template slot="info-header">
 											<img class="cvv-info" src="@/assets/images/icon/expired-card-info.png" />
 										</template>
 									</BaseFormGroup>
@@ -256,7 +256,7 @@
 										@keyup="this.$root.numberFormat"
 										>
 
-										<template v-slot:info-header>
+										<template slot="info-header">
 											<img class="cvv-info" src="@/assets/images/icon/cvv-label-info.png" />
 										</template>
 									</BaseFormGroup>
