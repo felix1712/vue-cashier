@@ -20,7 +20,8 @@ export default {
 				userId: 1,
 				id: 1,
 				imgPc: 'https://img11.360buyimg.com/Indonesia/jfs/t1/10395/16/11504/1476/5c6fda8eE3bdbddf7/c14dc0e056773836.png',
-				isRecommended: 'Recommended',
+				isRecommended: true,
+				isPromo: true,
 				bankName: 'Uang Elektronik',
 				completed: false,
 			},
@@ -29,7 +30,8 @@ export default {
 				id: 2,
 				imgPc: 'https://img11.360buyimg.com/Indonesia/jfs/t1/27836/21/7771/3242/5c6fd9ffE3fe664a1/e604a932c07c13cb.png',
 				bankName: 'Kartu Kredit /Debit',
-				isRecommended: 'Recommended',
+				isRecommended: true,
+				isPromo: true,
 				completed: false,
 			},
 
@@ -37,7 +39,8 @@ export default {
 				userId: 1,
 				id: 3,
 				imgPc: 'https://img11.360buyimg.com/Indonesia/jfs/t1/32995/37/4296/4206/5c7ccb5cE5a1f2553/18c1527a92d728ba.png',
-				isRecommended: 'Recommended',
+				isRecommended: true,
+				isPromo: true,
 				bankName: 'Virtual Account',
 				completed: false,
 			},
@@ -75,83 +78,91 @@ export default {
 };
 </script>
 
-<style scoped lang='scss'>
-.text-method {
-	font-size: 16px;
-	color: #464646;
-	font-weight: bold;
-	padding-bottom: 3%;
-}
+<style lang="scss" scoped>
+	@import "@/assets/styles/customs/_variable.scss";
 
-.s-dis-blok {
-	display: block;
-}
+	#paymentSidebar{
 
-.title-sidebar{
-	font-size: 1.2rem;
-	margin-bottom: 20px;
-}
+		.title-sidebar-frame{
+			padding: 0 10px;
+			.title-sidebar{
+				font-size: 1.1rem;
+				font-weight: bold;
+				padding: 1rem 0;
+				border-bottom: 1px solid $v-border-sidebar-label;
+			}
+		}
 
-#paymentMethod{
-	.s-pad {
-		padding: 1.5rem 1rem;
-		cursor: pointer;
-		border-bottom: 1px solid #E0D0D0;
+		#paymentMethod{
+			.payment-sidebar-item{
+				.s-pad {
+					padding: 1.5rem 0;
+					cursor: pointer;
+					border-bottom: $border-normal;
+				}
 
-		&:first-child{
-			border-top: 1px solid #E0D0D0;
+				.span-bank-name{
+					font-size: 0.9rem;
+				}
+
+				&:hover,
+				&.active {
+					position: relative;
+					background: #FFFBFB;
+					box-shadow: 5px 5px 10px 0 rgba(231, 231, 231, 0.5);
+					border-left: 3px solid $v-red;
+					height: auto;
+					color: #CB2E36;
+					width: 102%;
+
+					.s-pad{
+						border-bottom: solid transparent !important;
+					}
+					.span-bank-name {
+						color: #D1444A;
+						display: block;
+					}
+				}
+			}
+		}
+
+		.payment-method-recomended{
+			position: absolute;
+			top: 1rem;
+			right: 1rem;
+			.border-with-doted {
+				font-size: 8px;
+				border: 1px dotted $v-black;
+				border-radius: 35px;
+				padding: 1px 5px;
+				background: #FFFBFB;
+				color: $v-black;
+				margin: 0 3px;
+
+				&.red{
+					color: $v-red;
+					border: 1px dotted $v-red;
+					background: rgba($v-red, 0.1);
+				}
+
+				&.yellow{
+					color: $v-yellow;
+					border: 1px dotted $v-yellow;
+					background: $v-yellow-fill;
+				}
+			}
+		}
+
+		.img-secure {
+			position: inherit;
+			bottom: 0;
+			margin: 20px 0;
+			text-align: center;
+			.secure-image-bottom {
+				width: 100%;
+				opacity: 0.3;
+				filter: grayscale(100%) brightness(70%) contrast(1000%);
+			}
 		}
 	}
-}
-
-.active {
-	position: relative;
-	background: #FFFBFB;
-	box-shadow: 5px 5px 10px 0 rgba(231, 231, 231, 0.5);
-	border-top: solid transparent !important;
-	border-bottom: solid transparent !important;
-	border-left: 3px solid #CA2F35;
-	height: auto;
-	color: #CB2E36;
-	width: 102%;
-	.span-bank-name {
-		color: #D1444A;
-		display: block;
-	}
-}
-
-.s-dis-blok {
-	display: block;
-}
-
-.s-pad {
-	padding: 1.7rem;
-	cursor: pointer;
-	border-bottom: 1px solid #E0D0D0;
-		&:last-child {
-			border-bottom: 1px solid red;
-		}
-}
-
-.border-with-doted {
-	font-size: 8px;
-	border: 1px dotted #CB2E36;
-	border-radius: 35px;
-	padding: 5px;
-	background: #FFFBFB;
-	color: #CB2E36;
-}
-
-.img-secure {
-	position: inherit;
-	bottom: 0;
-	margin: 20px 0;
-	text-align: center;
-	.secure-image-bottom {
-		width: 100%;
-		filter: grayscale(100%);
-	}
-}
-
-
 </style>

@@ -54,6 +54,15 @@ export default {
 			EventBus.$emit('PaymentGotClicked', value);
 		},
 	},
+
+	computed: {
+		stringRadioChecked() {
+			return String(this.radioChecked);
+		},
+		stringRadioValue() {
+			return String(this.radioValue);
+		},
+	},
 };
 </script>
 

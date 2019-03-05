@@ -12,7 +12,7 @@ export default {
 	components: {
 		BaseRadioPeriod,
 		EventBus,
-		BaseFormGroup
+		BaseFormGroup,
 	},
 	data() {
 		return {
@@ -42,9 +42,9 @@ export default {
 			],
 			cvvModel: null,
 			periodValue: null,
-            gotClicked: undefined,
+			gotClicked: undefined,
 			virtuals: '',
-						hasError: {
+			hasError: {
 				noCard: {
 					errorMessage: null,
 				},
