@@ -128,6 +128,12 @@ export default {
 
 		templateForm() {
 			this.bindCard = !this.bindCard;
+			if(!this.bindCard){
+				this.cardNoModel = null;
+				this.holderNameModel = null;
+			} else {
+				this.updateFormData();
+			}
 		},
 
 		nextCard() {
@@ -175,9 +181,7 @@ export default {
 	mounted() {
 		if (this.dummyCard) {
 			this.bindCard = true;
-			const singleCardData = this.dummyCard[this.currentCardActive];
-			this.cardNoModel = singleCardData.nomorKartu;
-			this.holderNameModel = singleCardData.namaPemegang;
+			this.updateFormData();
 		} else {
 			this.bindCard = false;
 		}
