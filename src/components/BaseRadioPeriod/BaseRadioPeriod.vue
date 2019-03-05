@@ -63,6 +63,9 @@ export default {
 		top: 5.4rem;
 		left:10%;
 	}
+	.with-border-custom {
+		border-radius: 7px 7px 0px 0px !important;
+	}
 	.radio-period{
 		cursor: pointer;
 		color: $v-black;

@@ -12,6 +12,7 @@ export default {
 	},
 	data() {
 		return {
+			gotClicked: undefined,
 			cardNoModel: null,
 			holderNameModel: null,
 			cvvModel: null,
@@ -38,9 +39,9 @@ export default {
 		},
 	},
 	mounted() {
-		EventBus.$on('PaymentGotClicked', (clickCount) => {
-			console.log('event received!', clickCount);
-			console.log('The user 12321: ', clickCount); // Shows correct new user data
+		EventBus.$on('PaymentGotClicked', (data) => {
+			this.gotClicked = data;
+			console.log('The user 12321: ', data); // Shows correct new user data
 		});
 		console.log('User outside eventbus:', this.post); // Shows empty user
 	},
@@ -49,8 +50,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.custom-radio {
-	color: pink !important;
-	background: red !important;
+#itemVa {
+    .wrapper-input {
+        border: 1px solid red;
+        height: 16rem;
+    }
 }
 </style>
