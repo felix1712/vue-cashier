@@ -28,6 +28,9 @@ export default {
 		errorMessage: {
 			required: false,
 		},
+		infoInputMessage: {
+			required: false,
+		}
 	},
 
 	components: {
