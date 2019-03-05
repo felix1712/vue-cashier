@@ -97,5 +97,9 @@ export default {
 			display: block;
 			margin-top: 7px;
 		}
+
+		.info-input-message{
+			color: $v-label-input;
+		}
 	}
 </style>
