@@ -9,7 +9,7 @@ import BaseRadioPeriod from '@/components/BaseRadioPeriod/BaseRadioPeriod.vue';
 export default {
 
 	name: 'ItemGopay',
-        components: {
+	components: {
 		BaseProgress, BaseRadioPeriod,
 	},
 	computed: {
