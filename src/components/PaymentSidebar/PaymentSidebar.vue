@@ -86,7 +86,6 @@ export default {
 
 		.title-sidebar-frame{
 			padding: 0 10px;
-			
 			.title-sidebar{
 				font-size: 1.1rem;
 				font-weight: bold;
