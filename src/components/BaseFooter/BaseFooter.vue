@@ -7,6 +7,9 @@ export default {
 		logoWidth: {
 			type: Number,
 		},
+		totalPrice: {
+			required: false,
+		},
 	},
 };
 </script>
