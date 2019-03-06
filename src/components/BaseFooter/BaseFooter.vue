@@ -11,6 +11,24 @@ export default {
 			required: false,
 		},
 	},
+
+	data() {
+		return {
+			currentForm: null,
+		}
+	},
+
+	methods: {
+		kadal(){
+			debugger
+		}
+	},
+
+	mounted() {
+		this.$eventBus.$on('paymentMethodName', (clickCount) => {
+			this.currentForm = clickCount;
+		});
+	},
 };
 </script>
 

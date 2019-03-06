@@ -23,6 +23,7 @@ export default {
 				isRecommended: true,
 				isPromo: true,
 				bankName: 'Uang Elektronik',
+				payMethodCode: 'emoney',
 				completed: false,
 			},
 			{
@@ -32,6 +33,7 @@ export default {
 				bankName: 'Kartu Kredit /Debit',
 				isRecommended: true,
 				isPromo: true,
+				payMethodCode: 'OnlinePay',
 				completed: false,
 			},
 
@@ -42,6 +44,7 @@ export default {
 				isRecommended: true,
 				isPromo: true,
 				bankName: 'Virtual Account',
+				payMethodCode: 'VAccount',
 				completed: false,
 			},
 			{
@@ -49,6 +52,7 @@ export default {
 				id: 3,
 				imgPc: 'https://img11.360buyimg.com/Indonesia/jfs/t1/15172/6/7944/4206/5c6fd984Ee66c38c5/b309b92f15963de0.png',
 				bankName: 'Bank Transfer',
+				payMethodCode: 'BTransfer',
 				completed: false,
 			},
 			{
@@ -56,6 +60,7 @@ export default {
 				id: 4,
 				imgPc: 'https://img11.360buyimg.com/Indonesia/jfs/t1/8873/4/15300/1387/5c6fdb33Ef8db9052/9fbdc0102a5af4bf.png',
 				bankName: 'Cicilan Tanpa Kartu',
+				payMethodCode: 'MFinance',
 				completed: false,
 			},
 			{
@@ -63,6 +68,7 @@ export default {
 				id: 5,
 				imgPc: 'https://img11.360buyimg.com/Indonesia/jfs/t1/17344/26/8024/1925/5c736b25E41337b09/a4e78fec5e416cd1.png',
 				bankName: 'Toko Ritel',
+				payMethodCode: 'CStore',
 				completed: false,
 			},
 			],
