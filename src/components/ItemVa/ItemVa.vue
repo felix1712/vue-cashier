@@ -2,16 +2,12 @@
 
 <script>
 import BaseRadioPeriod from '@/components/BaseRadioPeriod/BaseRadioPeriod.vue';
-
 import BaseFormGroup from '@/components/BaseFormGroup/BaseFormGroup.vue';
-
-import { EventBus } from '@/event-bus';
 
 export default {
 	name: 'ItemVa',
 	components: {
 		BaseRadioPeriod,
-		EventBus,
 		BaseFormGroup,
 	},
 	data() {
@@ -60,13 +56,14 @@ export default {
 			},
 		};
 	},
-	mounted() {
-		EventBus.$on('PaymentGotClicked', (data) => {
-			this.gotClicked = data;
-			console.log(data);
-		});
+	props: {
+		object: {
+			type: String,
+		},
+		title: {
+			required: false,
+		},
 	},
-
 };
 </script>
 

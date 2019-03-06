@@ -1,13 +1,13 @@
 <div id="containerItem">
-	<template v-if="post === 'Kartu Kredit /Debit'">
+	<template v-if="post === 'OnlinePay'">
 			<ItemCreditCard />
 
 	</template>
-	<template v-if="post === 'Uang Elektronik' || post === undefined">
+	<template v-if="post === 'emoney' || post === undefined">
 			<ItemGopay></ItemGopay>
 	</template>
 
-	<template v-if="post === 'Virtual Account'">
+	<template v-if="post === 'VAccount'">
 		<ItemVa></ItemVa>
 	</template>
 

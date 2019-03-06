@@ -1,6 +1,6 @@
 const digitsRE = /(\d{3})(?=\d)/g;
 
-export function currency(value, currency, decimals) {
+export function currencyFilter(value, currency, decimals) {
 	value = parseFloat(value);
 	if (!isFinite(value) || (!value && value !== 0)) return '';
 	currency = currency != null ? currency : 'Rp ';
