@@ -1,6 +1,7 @@
 <template src="./index.html"></template>
 <script>
 import { EventBus } from '@/event-bus';
+
 export default {
   name: 'BaseRadioPeriod',
   data() {
@@ -47,8 +48,18 @@ export default {
     radioChange(value) {
       this.$emit('input', value);
       this.picked = value;
-      this.gotClicked = true
-      EventBus.$emit('PaymentGotClicked', this.gotClicked);
+      this.gotClicked = true;
+      console.log('value:', value);
+      EventBus.$emit('PaymentGotClicked', value);
+    },
+  },
+
+  computed: {
+    stringRadioChecked() {
+      return String(this.radioChecked);
+    },
+    stringRadioValue() {
+      return String(this.radioValue);
     },
   },
 };
@@ -58,8 +69,16 @@ export default {
 @import "@/assets/styles/customs/_variable.scss";
 
 .custom-radio-gojek {
-  top: 56%;
-  left: 4%;
+  top: auto;
+  margin: 3%;
+}
+
+.custome-width {
+  width: 91% !important;
+}
+
+.with-border-custom.checked {
+  border-radius: 7px 7px 0px 0px !important;
 }
 
 .radio-period {
@@ -85,8 +104,16 @@ export default {
       transition: border .10s linear;
       -webkit-transition: border .10s linear;
 
-      &.gojek-frame {
+      &.custom-frame {
         width: 90%;
+        padding: 10px 15px;
+        span {
+          font-weight:700;
+        }
+        img {
+          vertical-align: middle;
+          height: 30px;
+        }
       }
 
       p,
@@ -119,6 +146,10 @@ export default {
 
       .label-frame {
         border-left: $border-red;
+
+        &.custom-frame {
+          width: 90%;
+        }
       }
 
       .custom-radio {

@@ -13,6 +13,7 @@ export default {
 <style lang="scss" scoped>
 #baseFooter {
   position: fixed;
+  z-index: 9999;
   bottom: 0;
   width: 74.3%;
   padding: 20px;
@@ -43,7 +44,7 @@ export default {
   }
 
   .wrapper-text {
-    margin-top:10px;
+    margin-top: 10px;
     text-align: center;
   }
 }

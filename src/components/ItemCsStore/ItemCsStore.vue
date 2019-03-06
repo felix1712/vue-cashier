@@ -8,7 +8,7 @@ import BaseFormGroup from '@/components/BaseFormGroup/BaseFormGroup.vue';
 import { EventBus } from '@/event-bus';
 
 export default {
-	name: 'ItemVa',
+	name: 'csStore',
 	components: {
 		BaseRadioPeriod,
 		EventBus,
@@ -19,31 +19,16 @@ export default {
 			bankArray: [
 				{
 					id: 11,
-					name: 'Bank Central Asia',
+					name: 'Alfamart',
 					nameAbbr: 'BCA',
-					image: 'https://img20.jd.id/Indonesia/nHBfsgAABQAAABMACjIc_QAAFiE.png',
+					image: 'https://storage.jd.com/static-res/payment/foreign/idn/images/store/alfamart.png',
 				},
-
-				{
-					id: 12,
-					name: 'Bank Negara Indonesia',
-					nameAbbr: 'BNI',
-					image: 'https://img20.jd.id/Indonesia/nHBfsgAABAAAAA0ACn0fdwAAEKw.png',
-				},
-
-				{
-					id: 13,
-					name: 'Bank Rakyat Indonesia',
-					nameAbbr: 'BRI',
-					image: 'https://img20.jd.id/Indonesia/nHBfsgAABgAAAAUACrImoAAAEa8.png',
-				},
-
 
 			],
 			cvvModel: null,
 			periodValue: null,
 			gotClicked: undefined,
-			virtuals: '',
+			csStore: '',
 			hasError: {
 				noCard: {
 					errorMessage: null,
@@ -71,7 +56,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-#itemVa {
+#itemCsStore {
     .wrapper-input {
         border: 1px solid red;
         border-top:none;

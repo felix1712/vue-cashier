@@ -1,22 +1,21 @@
 <template src="./index.html"></template>
 <script>
-
 import BaseCountdown from '@/components/BaseCountdown/BaseCountdown.vue';
 import ItemOrderDetails from '@/components/ItemOrderDetails/ItemOrderDetails.vue';
 
 export default {
   name: 'CashierDetail',
-  data(){
+  data() {
     return {
-      detailDate:null,
+      detailDate: null,
     }
   },
   components: {
     BaseCountdown,
     ItemOrderDetails,
   },
-  mounted(){
-    this.detailDate='2019-03-09 08:15:00'
+  mounted() {
+    this.detailDate = '2019-03-09 08:15:00'
   }
 };
 
@@ -24,6 +23,7 @@ export default {
 <style scoped lang='scss'>
 .container {
   padding: 2px 16px;
+  background: #fff;
 }
 
 .det-title {
@@ -94,6 +94,7 @@ export default {
           float: right;
           color: #333;
         }
+
         .total-l {
           float: left;
           font-weight: bold;

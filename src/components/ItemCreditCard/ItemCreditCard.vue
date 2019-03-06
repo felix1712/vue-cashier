@@ -75,6 +75,45 @@ export default {
 					promo: false,
 				},
 			],
+
+			dummyPeriods: [
+				{
+					id: 1,
+					periodName: 'Full Payment',
+					periodPrice: 150000,
+					disabled: false,
+				},
+				{
+					id: 2,
+					periodName: '3',
+					periodPrice: 50000,
+					disabled: false,
+				},
+				{
+					id: 3,
+					periodName: '6',
+					periodPrice: 25000,
+					disabled: true,
+				},
+				{
+					id: 4,
+					periodName: '12',
+					periodPrice: 12500,
+					disabled: false,
+				},
+				{
+					id: 5,
+					periodName: '18',
+					periodPrice: 8400,
+					disabled: false,
+				},
+				{
+					id: 6,
+					periodName: '24',
+					periodPrice: 6250,
+					disabled: true,
+				},
+			],
 			currentCard: 0,
 		};
 	},
@@ -128,6 +167,12 @@ export default {
 
 		templateForm() {
 			this.bindCard = !this.bindCard;
+			if (!this.bindCard) {
+				this.cardNoModel = null;
+				this.holderNameModel = null;
+			} else {
+				this.updateFormData();
+			}
 		},
 
 		nextCard() {
@@ -144,6 +189,7 @@ export default {
 			const singleCardData = this.dummyCard[this.currentCardActive];
 			this.cardNoModel = singleCardData.nomorKartu;
 			this.holderNameModel = singleCardData.namaPemegang;
+			this.periodValue = null;
 		},
 
 		dotsCard(data) {
@@ -175,9 +221,7 @@ export default {
 	mounted() {
 		if (this.dummyCard) {
 			this.bindCard = true;
-			const singleCardData = this.dummyCard[this.currentCardActive];
-			this.cardNoModel = singleCardData.nomorKartu;
-			this.holderNameModel = singleCardData.namaPemegang;
+			this.updateFormData();
 		} else {
 			this.bindCard = false;
 		}

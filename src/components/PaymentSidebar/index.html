@@ -1,21 +1,25 @@
-<div class="payment-sidebar  ">
-    <BaseLogo :logoWidth="30" />
-    <span class="s-ft-b">Metode Pembayaraan</span>
-    <div class="row s-pad" v-for="(s, item) in publicPath" :key="item.id" @click="sendBankName(s,s.bankName)" :class="{'active' : isActive === s  }">
-        <div class="col-12 s-p-0">
-            <div class="row">
-                <div class="col-9">
-                    <span class="s-dis-blok span-bank-name s-ft-r"> {{ s.bankName }} </span>
-                    <img :src="s.imgPc">
-                </div>
-                <div class="col-2">
-                    <span class="border-with-doted" v-if="s.isRecommended">{{ s.isRecommended }}</span>
+<div id="paymentSidebar" class="payment-sidebar">
+    <BaseLogo class="s-px-10" :logoWidth="80" />
+    <div class="title-sidebar-frame">
+        <p class="title-sidebar">Metode Pembayaraan</p>
+    </div>
+    <div id="paymentMethod">
+        <div class="row payment-sidebar-item" v-for="(s, item) in publicPath" :key="item.id" @click="sendBankName(s,s.bankName)" :class="{'active' : isActive === s, 's-px-10' : isActive != s }">
+            <div class="col-12 s-pad">
+                <div class="row">
+                    <div class="col-9">
+                        <span class="s-d-b span-bank-name s-ft-r"> {{ s.bankName }} </span>
+                        <img :src="s.imgPc">
+                    </div>
+                    <div class="payment-method-recomended">
+                        <span class="border-with-doted red" v-if="s.isPromo">Promo</span>
+                        <!-- <span class="border-with-doted red" v-if="s.isRecommended">Recomended</span> -->
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="col-3 img-secure">
+    <div class="col-12 img-secure">
         <img class="secure-image-bottom" src="https://img11.360buyimg.com/Indonesia/jfs/t1/5054/33/8602/366742/5ba9fda8Ee74d7886/c8f92aae659d2d44.png"><br>
-        <!-- <div class="pleeease-click-me" @click="emitGlobalClickEvent()">123123</div> -->
     </div>
 </div>

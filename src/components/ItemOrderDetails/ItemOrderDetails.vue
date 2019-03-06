@@ -8,6 +8,7 @@ export default {
 <style scoped lang='scss'>
 .container {
   padding: 2px 16px;
+  background: #fff;
 }
 
 .det-title {

@@ -17,6 +17,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+	@import "@/assets/styles/customs/_variable.scss";
+
 	#cashierPayment{
 		background: #fff;
 		box-shadow: 8px 0 10px 0px #EBEBEB;
@@ -26,10 +28,14 @@ export default {
 			display: -webkit-flex;
 			flex-wrap: wrap;
 			height: 100%;
-			min-height: 650px;
+			min-height: 800px;
 
-			.payment-sidebar{
-				height: auto;
+			.sidebar-frame{
+				border: $border-normal;
+
+				#paymentSidebar{
+					height: auto;
+				}
 			}
 		}
 	}

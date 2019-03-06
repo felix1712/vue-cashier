@@ -1,5 +1,3 @@
-
-
 <template src="./index.html"></template>
 
 <script>
@@ -7,19 +5,10 @@ import BaseProgress from '@/components/BaseProgress/BaseProgress.vue';
 import BaseRadioPeriod from '@/components/BaseRadioPeriod/BaseRadioPeriod.vue';
 
 export default {
-
 	name: 'ItemGopay',
-        components: {
-		BaseProgress, BaseRadioPeriod,
-	},
-	computed: {
-		type() {
-			if (this.to) {
-				return 'router-link';
-			}
-
-			return 'a';
-		},
+	components: {
+		BaseProgress,
+		BaseRadioPeriod,
 	},
 	data() {
 		return {
@@ -48,7 +37,6 @@ export default {
 			required: false,
 		},
 	},
-
 };
 </script>
 
@@ -56,9 +44,5 @@ export default {
 .custom-radio {
     color: pink !important;
     background: red !important;
-}
-
-.label-frame {
-	width:90%!important;
 }
 </style>
