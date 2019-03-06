@@ -23,8 +23,8 @@ export default {
 	data() {
 		return {
 			totalPrice: 112500,
-		}
-	}
+		};
+	},
 };
 </script>
 

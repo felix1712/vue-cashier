@@ -15,13 +15,10 @@ export default {
 	data() {
 		return {
 			currentForm: null,
-		}
+		};
 	},
 
 	methods: {
-		kadal(){
-			debugger
-		}
 	},
 
 	mounted() {

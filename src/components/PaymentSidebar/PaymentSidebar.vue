@@ -9,9 +9,6 @@ export default {
 	components: {
 		BaseLogo,
 	},
-	beforeCreate() {
-		console.log('Nothing gets called before me!');
-	},
 	data() {
 		return {
 			isActive: undefined,
@@ -81,6 +78,9 @@ export default {
 			this.$eventBus.$emit('paymentMethodName', data);
 		},
 	},
+	created(){
+		console.log('kadal');
+	}
 };
 </script>
 
