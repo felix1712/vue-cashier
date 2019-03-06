@@ -16,7 +16,7 @@ export default {
     ItemOrderDetails,
   },
   mounted(){
-    this.detailDate='2019-03-06 08:15:00'
+    this.detailDate='2019-03-09 08:15:00'
   }
 };
 
