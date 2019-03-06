@@ -78,9 +78,8 @@ export default {
 			this.$eventBus.$emit('paymentMethodName', data);
 		},
 	},
-	created(){
-		console.log('kadal');
-	}
+	created() {
+	},
 };
 </script>
 
