@@ -101,5 +101,9 @@ export default {
 		.info-input-message{
 			color: $v-label-input;
 		}
+		&-input-text {
+			font-size: 12px;
+			color: #726E6E;
+		}
 	}
 </style>

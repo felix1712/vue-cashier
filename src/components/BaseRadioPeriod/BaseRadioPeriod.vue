@@ -48,7 +48,6 @@ export default {
 			this.$emit('input', value);
 			this.picked = value;
 			this.gotClicked = true;
-			// EventBus.$emit('PaymentGotClicked', this.gotClicked);
 		},
 	},
 
@@ -67,8 +66,14 @@ export default {
 	@import "@/assets/styles/customs/_variable.scss";
 
 	.custom-radio-gojek {
-		top: 5.4rem;
-		left:10%;
+		top: auto;
+		margin: 3%;
+	}
+	.custome-width {
+		width: 91% !important;
+	}
+	.with-border-custom {
+		border-radius: 7px 7px 0px 0px !important;
 	}
 	.radio-period{
 		cursor: pointer;

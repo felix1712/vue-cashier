@@ -143,7 +143,6 @@ export default {
 					&:before{
 						right: 0;
 					}
-
 					.s-pad{
 						border-bottom: solid transparent !important;
 					}
@@ -165,7 +164,6 @@ export default {
 			position: absolute;
 			top: 1rem;
 			right: 1rem;
-
 			.border-with-doted {
 				font-size: 8px;
 				border: 1px dotted $v-black;
@@ -190,7 +188,7 @@ export default {
 		}
 
 		.img-secure {
-			position: absolute;
+			position: inherit;
 			bottom: 0;
 			margin: 20px 0;
 			text-align: center;

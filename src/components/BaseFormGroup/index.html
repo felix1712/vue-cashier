@@ -2,7 +2,7 @@
 	<label :for="inputId">{{labelTitle}} <span class="info-label" @click="showModal(idModal)" v-if="withInfo">i</span></label>
 	<slot></slot>
 	<small v-if="errorMessage" class="field-text-error">{{errorMessage}}</small>
-	<small v-if="infoInputMessage" v-show="!errorMessage" class="gi">{{infoInputMessage}}</small>
+	<small v-if="infoInputMessage" v-show="!errorMessage" class="form-group-input-text">{{infoInputMessage}}</small>
 
 	<BaseModal 
 		v-if="openedModal"
