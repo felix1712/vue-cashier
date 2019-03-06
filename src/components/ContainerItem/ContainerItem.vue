@@ -6,6 +6,8 @@ import ItemGopay from '@/components/ItemGopay/ItemGopay.vue';
 import ItemVa from '@/components/ItemVa/ItemVa.vue';
 import csStore from '@/components/ItemCsStore/ItemCsStore.vue';
 import ItemMf from '@/components/ItemMf/ItemMf.vue';
+import ItemBankTransfer from '@/components/ItemBankTransfer/ItemBankTransfer.vue';
+
 
 export default {
 	name: 'ContainerItem',
@@ -15,6 +17,7 @@ export default {
 		ItemVa,
 		csStore,
 		ItemMf,
+		ItemBankTransfer,
 	},
 
 	data() {
