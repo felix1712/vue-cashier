@@ -5,7 +5,7 @@ import ItemCreditCard from '@/components/ItemCreditCard/ItemCreditCard.vue';
 import ItemGopay from '@/components/ItemGopay/ItemGopay.vue';
 import ItemVa from '@/components/ItemVa/ItemVa.vue';
 import csStore from '@/components/ItemCsStore/ItemCsStore.vue';
-import { EventBus } from '@/event-bus';
+import ItemMf from '@/components/ItemMf/ItemMf.vue';
 
 export default {
 	name: 'ContainerItem',
@@ -14,6 +14,7 @@ export default {
 		ItemGopay,
 		ItemVa,
 		csStore,
+		ItemMf,
 	},
 
 	data() {
