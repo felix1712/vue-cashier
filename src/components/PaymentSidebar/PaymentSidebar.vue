@@ -46,6 +46,11 @@ export default {
 				bankName: 'Virtual Account',
 				payMethodCode: 'VAccount',
 				completed: false,
+				image: ['https://img11.360buyimg.com/Indonesia/jfs/t1/10395/16/11504/1476/5c6fda8eE3bdbddf7/c14dc0e056773836.png',
+					'https://img11.360buyimg.com/Indonesia/jfs/t1/10395/16/11504/1476/5c6fda8eE3bdbddf7/c14dc0e056773836.png',
+					'https://img11.360buyimg.com/Indonesia/jfs/t1/10395/16/11504/1476/5c6fda8eE3bdbddf7/c14dc0e056773836.png',
+
+				],
 			},
 			{
 				userId: 1,
@@ -79,6 +84,7 @@ export default {
 			this.isActive = i;
 			this.dataToGo = data;
 			this.$eventBus.$emit('paymentMethodName', data);
+			console.log('data', data);
 		},
 	},
 };

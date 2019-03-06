@@ -4,6 +4,8 @@
 import ItemCreditCard from '@/components/ItemCreditCard/ItemCreditCard.vue';
 import ItemGopay from '@/components/ItemGopay/ItemGopay.vue';
 import ItemVa from '@/components/ItemVa/ItemVa.vue';
+import ItemBankTransfer from '@/components/ItemBankTransfer/ItemBankTransfer.vue';
+
 
 export default {
 	name: 'ContainerItem',
@@ -11,6 +13,7 @@ export default {
 		ItemCreditCard,
 		ItemGopay,
 		ItemVa,
+		ItemBankTransfer,
 	},
 
 	data() {

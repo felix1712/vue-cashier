@@ -1,0 +1,41 @@
+<div id="ItemBankTransfer">
+    <div class="row s-px-20">
+        <template>
+            <div class="col-12">
+                <div class="row s-my-50" 
+                    v-for="(item, index) in bankArray" 
+                    :key="index">
+                    <BaseRadioPeriod 
+                    :periodLabel="item.name" 
+                    :radioValue="item.id" 
+                    :radioChecked="virtuals" 
+                    v-model="virtuals" 
+                    :radioName="'virtualAccount'" 
+                    :paymentMethod=true 
+                    :periodPrice="'150,000'" 
+                    :radioId="'virtualAccount-'+item.id" 
+                    :paymentImage="item.image">
+                    <slot>
+                        <div class="col-12 wrapper-input s-p-5 " v-if="virtuals == item.id">
+                            <div class="col-12 "  >
+                                <BaseFormGroup 
+                                class="s-pt-13"
+                                :labelTitle="'Nomor Handphone / Email '"
+                                infoInputMessage="Informasi Bank Transfer akan dikirimkan melalui Handphone dan Email Anda"
+                            >
+                                <input 
+                                    type="text" 
+                                    class="s-form-control"
+                                    >
+                            </BaseFormGroup>   
+                            </div>
+
+                        </div>                       
+                    </slot>
+                    </BaseRadioPeriod>
+
+                </div>
+            </div>
+        </template>
+    </div>                                          
+</div>
