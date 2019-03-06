@@ -87,7 +87,7 @@ export default {
 
         .item-l {
           float: left;
-          color: #8ca2b0;
+          color: #979797;
         }
 
         .item-r {
@@ -97,7 +97,7 @@ export default {
         .total-l {
           float: left;
           font-weight: bold;
-          color: #8ca2b0;
+          color: #979797;
         }
 
         .total-r {
