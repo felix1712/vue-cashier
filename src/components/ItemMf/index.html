@@ -1,0 +1,29 @@
+<div id="itemMf">
+        <div class="row s-px-20">
+            <template>
+                <div class="col-12">
+                    <div class="row s-my-50" v-for="(item, index) in dummyMf" :key="index">
+                        <BaseRadioPeriod :periodLabel="item.name" :radioValue="item.name" :radioChecked="mfModel" v-model="mfModel" :radioName="'virtualAccount'" :paymentMethod=true :periodPrice="'150,000'" :radioId="'multiFinance-'+item.id" :paymentImage="item.image">
+                            <slot>
+                                <div class="col-12 wrapper-input s-p-5 " v-if="mfModel == item.name">
+                                <div class="col-4" v-for="(period, index) in dummyPeriods">
+                                        <BaseRadioPeriod
+                                            :periodLabel="period.periodName"
+                                            :periodPrice="period.periodPrice"
+                                            :radioName="'periods'"
+                                            :radioId="'periods'+period.id"
+                                            :radioValue="period.periodName"
+                                            :periodIst="period.periodName != 'Full Payment'"
+                                            :radioChecked="mfPeriod"
+                                            v-model="mfPeriod"
+                                        />
+                                    </div>  
+                                </div>                       
+                            </slot>
+                        </BaseRadioPeriod>
+                    </div>
+                </div>
+            </template>
+        </div>
+    
+    </div>

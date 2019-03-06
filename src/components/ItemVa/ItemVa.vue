@@ -39,7 +39,7 @@ export default {
 			cvvModel: null,
 			periodValue: null,
 			gotClicked: undefined,
-			virtuals: '',
+			virtuals: null,
 			hasError: {
 				noCard: {
 					errorMessage: null,
