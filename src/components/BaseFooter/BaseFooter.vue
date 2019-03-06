@@ -1,12 +1,30 @@
 <template src="./index.html"></template>
 <script>
 export default {
-  name: 'BaseFooter',
-  props: {
-    logoWidth: {
-      type: Number,
-    },
-  },
+	name: 'BaseFooter',
+	props: {
+		logoWidth: {
+			type: Number,
+		},
+		totalPrice: {
+			required: false,
+		},
+	},
+
+	data() {
+		return {
+			currentForm: null,
+		};
+	},
+
+	methods: {
+	},
+
+	mounted() {
+		this.$eventBus.$on('paymentMethodName', (clickCount) => {
+			this.currentForm = clickCount;
+		});
+	},
 };
 
 </script>

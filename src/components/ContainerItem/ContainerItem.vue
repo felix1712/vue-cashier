@@ -22,7 +22,7 @@ export default {
 		};
 	},
 	mounted() {
-		EventBus.$on('i-got-clicked', (clickCount) => {
+		this.$eventBus.$on('paymentMethodName', (clickCount) => {
 			this.post = clickCount;
 		});
 	},

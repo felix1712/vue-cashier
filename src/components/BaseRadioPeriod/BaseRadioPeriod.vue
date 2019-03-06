@@ -1,7 +1,5 @@
 <template src="./index.html"></template>
 <script>
-import { EventBus } from '@/event-bus';
-
 export default {
   name: 'BaseRadioPeriod',
   data() {

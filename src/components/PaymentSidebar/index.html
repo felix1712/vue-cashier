@@ -4,7 +4,7 @@
         <p class="title-sidebar">Metode Pembayaraan</p>
     </div>
     <div id="paymentMethod">
-        <div class="row payment-sidebar-item" v-for="(s, item) in publicPath" :key="item.id" @click="sendBankName(s,s.bankName)" :class="{'active' : isActive === s, 's-px-10' : isActive != s }">
+        <div class="row payment-sidebar-item" v-for="(s, item) in publicPath" :key="item.id" @click="sendBankName(s,s.payMethodCode)" :class="{'active' : isActive === s, 's-px-10' : isActive != s }">
             <div class="col-12 s-pad">
                 <div class="row">
                     <div class="col-9">

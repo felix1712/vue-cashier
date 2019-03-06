@@ -1,119 +1,22 @@
 <template src="./index.html"></template>
 
 <script>
+// import component
 import BaseCardFrame from '@/components/BaseCardFrame/BaseCardFrame.vue';
 import BaseSecondButton from '@/components/BaseSecondButton/BaseSecondButton.vue';
-
 import BaseFormGroup from '@/components/BaseFormGroup/BaseFormGroup.vue';
 import BaseRadioPeriod from '@/components/BaseRadioPeriod/BaseRadioPeriod.vue';
 import BaseCheckbox from '@/components/BaseCheckbox/BaseCheckbox.vue';
+// import vuex
+import { mapState, mapActions } from 'vuex';
+
 
 export default {
 	name: 'ItemCreditCard',
 	data() {
 		return {
 			bindCard: false,
-			cardNoModel: null,
-			holderNameModel: null,
-			cvvModel: null,
-			expiredDateModel: null,
-			periodValue: null,
 			saveNewCardModel: false,
-			hasError: {
-				noCard: {
-					errorMessage: null,
-				},
-				holderName: {
-					errorMessage: null,
-				},
-				cvv: {
-					errorMessage: null,
-				},
-				expiredDate: {
-					errorMessage: null,
-				},
-			},
-			dummyCard: [
-				{
-					id: 1,
-					nomorKartu: '4556330069036953',
-					namaPemegang: 'Felix Andrean',
-					expiredCard: '12/24',
-					typeCard: 'visa',
-					promo: true,
-				},
-				{
-					id: 2,
-					nomorKartu: '4556330069036933',
-					namaPemegang: 'Ilham Raenaldi',
-					expiredCard: '05/23',
-					typeCard: 'mastercard',
-					promo: false,
-				},
-				{
-					id: 3,
-					nomorKartu: '4556330069036913',
-					namaPemegang: 'Wahyu Kadal',
-					expiredCard: '01/19',
-					typeCard: 'visa',
-					promo: false,
-				},
-				{
-					id: 4,
-					nomorKartu: '4556330069036993',
-					namaPemegang: 'Wahyu Kadal Buntung',
-					expiredCard: '03/19',
-					typeCard: 'visa',
-					promo: true,
-				},
-				{
-					id: 5,
-					nomorKartu: '4556330069036983',
-					namaPemegang: 'Radiyan Abi Priyanda',
-					expiredCard: '06/20',
-					typeCard: 'mastercard',
-					promo: false,
-				},
-			],
-
-			dummyPeriods: [
-				{
-					id: 1,
-					periodName: 'Full Payment',
-					periodPrice: 150000,
-					disabled: false,
-				},
-				{
-					id: 2,
-					periodName: '3',
-					periodPrice: 50000,
-					disabled: false,
-				},
-				{
-					id: 3,
-					periodName: '6',
-					periodPrice: 25000,
-					disabled: true,
-				},
-				{
-					id: 4,
-					periodName: '12',
-					periodPrice: 12500,
-					disabled: false,
-				},
-				{
-					id: 5,
-					periodName: '18',
-					periodPrice: 8400,
-					disabled: false,
-				},
-				{
-					id: 6,
-					periodName: '24',
-					periodPrice: 6250,
-					disabled: true,
-				},
-			],
 			currentCard: 0,
 		};
 	},
@@ -125,38 +28,6 @@ export default {
 		BaseCheckbox,
 	},
 	methods: {
-		checkForm() {
-			if (this.cardNoModel) {
-				this.hasError.noCard.errorMessage = null;
-			} else {
-				this.hasError.noCard.errorMessage = 'Hai Error Email';
-			}
-
-			if (this.holderNameModel) {
-				this.hasError.holderName.errorMessage = null;
-			} else {
-				this.hasError.holderName.errorMessage = 'Hai Error Nama';
-			}
-
-			if (this.cvvModel) {
-				this.hasError.cvv.errorMessage = null;
-			} else {
-				this.hasError.cvv.errorMessage = 'Hai Error CVV';
-			}
-
-			if (this.expiredDateModel) {
-				this.hasError.cvv.errorMessage = null;
-			} else {
-				this.hasError.cvv.errorMessage = 'Hai Error CVV';
-			}
-
-			if (this.cardNoModel && this.holderNameModel && this.cvvModel && this.expiredDateModel) {
-				return true;
-			}
-
-			return false;
-		},
-
 		removeError(inputName) {
 			this.hasError[inputName].errorMessage = null;
 		},
@@ -168,8 +39,7 @@ export default {
 		templateForm() {
 			this.bindCard = !this.bindCard;
 			if (!this.bindCard) {
-				this.cardNoModel = null;
-				this.holderNameModel = null;
+				this.emptyForm();
 			} else {
 				this.updateFormData();
 			}
@@ -185,16 +55,29 @@ export default {
 			this.updateFormData();
 		},
 
+		emptyForm() {
+			this.$store.state.onlinePay.cardNoModel = null;
+			this.$store.state.onlinePay.holderNameModel = null;
+			this.$store.state.onlinePay.expiredDateModel = null;
+			this.$store.state.onlinePay.cvvModel = null;
+			this.$store.state.onlinePay.periodValue = null;
+		},
+
 		updateFormData() {
 			const singleCardData = this.dummyCard[this.currentCardActive];
-			this.cardNoModel = singleCardData.nomorKartu;
-			this.holderNameModel = singleCardData.namaPemegang;
-			this.periodValue = null;
+			this.$store.state.onlinePay.cardNoModel = singleCardData.nomorKartu;
+			this.$store.state.onlinePay.holderNameModel = singleCardData.namaPemegang;
+			this.$store.state.onlinePay.cvvModel = null;
+			this.$store.state.onlinePay.periodValue = null;
 		},
 
 		dotsCard(data) {
 			this.currentCard = data;
 		},
+
+		...mapActions({
+			checkForm: 'checkForm',
+		}),
 	},
 
 	computed: {
@@ -212,6 +95,62 @@ export default {
 			}
 			return 'Kembali ke kartu saya';
 		},
+
+		cardNoModel: {
+			get() {
+				return this.$store.state.onlinePay.cardNoModel;
+			},
+
+			set(value) {
+				this.$store.commit('updateCardNoModel', value);
+			},
+		},
+
+		holderNameModel: {
+			get() {
+				return this.$store.state.onlinePay.holderNameModel;
+			},
+
+			set(value) {
+				this.$store.commit('udpateHolderName', value);
+			},
+		},
+
+		cvvModel: {
+			get() {
+				return this.$store.state.onlinePay.cvvModel;
+			},
+
+			set(value) {
+				this.$store.commit('updateCvvModel', value);
+			},
+		},
+
+		expiredDateModel: {
+			get() {
+				return this.$store.state.onlinePay.expiredDateModel;
+			},
+
+			set(value) {
+				this.$store.commit('updateExpiredDateModel', value);
+			},
+		},
+
+		periodValue: {
+			get() {
+				return this.$store.state.onlinePay.periodValue;
+			},
+
+			set(value) {
+				this.$store.commit('updatePeriodValue', value);
+			},
+		},
+
+		...mapState({
+			hasError: state => state.onlinePay.hasError,
+			dummyCard: state => state.onlinePay.dummyCard,
+			dummyPeriods: state => state.onlinePay.dummyPeriods,
+		}),
 	},
 
 	created() {
