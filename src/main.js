@@ -4,12 +4,12 @@ import router from './router';
 import store from './store/index';
 import './registerServiceWorker';
 import customJs from '@/mixins/custom';
-import { currency } from '@/mixins/filter';
+import { currencyFilter } from '@/mixins/filter';
 import './event-bus';
 
 
 Vue.config.productionTip = false;
-Vue.filter('currency', currency);
+Vue.filter('currencyFilter', currencyFilter);
 
 new Vue({
 	mixins: [customJs],

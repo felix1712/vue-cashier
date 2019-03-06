@@ -42,8 +42,8 @@ const customJs = {
 			}
 		},
 
-		commasFormat(selector){
-			selector.target.value = selector.target.value.toString().replace(/,/g, "").replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+		commasFormat(selector) {
+			selector.target.value = selector.target.value.toString().replace(/,/g, '').replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 		}
 	},
 };

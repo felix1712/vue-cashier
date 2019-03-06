@@ -96,13 +96,13 @@ export default {
 
 		#paymentMethod{
 			position: relative;
-    	overflow: hidden;
+			overflow: hidden;
 
 			.payment-sidebar-item{
 				display: block;
-		    position: relative;
-		    z-index: 1;
-		    transition: .35s ease color;
+				position: relative;
+				z-index: 1;
+				transition: .35s ease color;
 
 				.s-pad {
 					padding: 1.5rem 0;
@@ -117,37 +117,42 @@ export default {
 				}
 
 				&:before{
-		      content: '';
-		      display: block;
-		      z-index: -1;
-		      position: absolute;
-		      right: -100%; 
-		      top: 0;
-		      width: 100%; 
-		      height: 100%;
-		      border-left: 3px solid $v-red;
-		      background: #FFFBFB;
-		      color: #CB2E36;
-		      transition: .35s ease right;
-		    }
+					content: '';
+					display: block;
+					z-index: -1;
+					position: absolute;
+					right: -100%;
+					top: 0;
+					width: 100%;
+					height: 100%;
+					border-left: 3px solid $v-red;
+					background: #FFFBFB;
+					color: #CB2E36;
+					transition: .35s ease right;
+				}
 
-		    &.active,
-		    &:hover{
-		    	box-shadow: 5px 5px 10px 0 rgba(231, 231, 231, 0.5);
+				&.active,
+				&:hover{
+					box-shadow: 5px 5px 10px 0 rgba(231, 231, 231, 0.5);
 
-		      &:before{
-		        right: 0;
-		      }
+					&:before{
+						right: 0;
+					}
 
-		      .s-pad{
+					.s-pad{
 						border-bottom: solid transparent !important;
-						padding: 1.5rem 10px;
 					}
 					.span-bank-name {
 						color: #D1444A;
 						display: block;
 					}
-		    }
+				}
+
+				&.active{
+					.s-pad{
+						padding: 1.5rem 10px;
+					}
+				}
 			}
 		}
 
