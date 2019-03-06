@@ -1,11 +1,52 @@
 <template src="./index.html"></template>
 <script>
 export default {
-  name: 'ItemOrderDetails'
+  name: 'ItemOrderDetails',
+  data() {
+    return {
+      isOpen: false,
+    }
+  },
+  methods: {
+    toggleAccordion() {
+      this.isOpen = !this.isOpen;
+    }
+  },
+  computed: {
+    accordionClasses() {
+      return {
+        'is-closed': !this.isOpen,
+        'is-primary': this.isOpen,
+        'is-dark': !this.isOpen
+      };
+    }
+  },
+
 };
 
 </script>
 <style scoped lang='scss'>
+.message {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.message-header {
+  cursor: pointer;
+}
+
+.message-body {
+  padding: 0;
+  max-height: 10em;
+  overflow: auto;
+  transition: 0.3s ease all;
+}
+
+.is-closed .message-body {
+  max-height: 0;
+}
+
 .container {
   padding: 2px 16px;
   background: #fff;
@@ -98,9 +139,10 @@ export default {
 
 .left-img-info {
   display: inline-block;
-  width: 60px;
-  height: 60px;
+  width: 40px;
+  height: 40px;
   vertical-align: bottom;
+
   img {
     width: 100%;
   }
@@ -117,7 +159,9 @@ export default {
   margin-left: 1.5em;
   font-size: 14px;
   line-height: 10px;
-  color: #9b9b9b;
+  .sub-title {
+    color: #989898;
+  }
 }
 
 /*style right order detail flight*/

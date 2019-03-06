@@ -73,7 +73,7 @@ export default {
 <style lang="scss" scoped>
 #itemVa {
     .wrapper-input {
-        border: 1px solid red;
+        border: 1px solid #c91c23;
         border-top:none;
         height: 100%;
 	}
