@@ -4,7 +4,6 @@
 import ItemCreditCard from '@/components/ItemCreditCard/ItemCreditCard.vue';
 import ItemGopay from '@/components/ItemGopay/ItemGopay.vue';
 import ItemVa from '@/components/ItemVa/ItemVa.vue';
-import { EventBus } from '@/event-bus';
 
 export default {
 	name: 'ContainerItem',
@@ -20,12 +19,9 @@ export default {
 		};
 	},
 	mounted() {
-		EventBus.$on('i-got-clicked', (clickCount) => {
-			console.log('event received!', clickCount);
+		this.$eventBus.$on('paymentMethodName', (clickCount) => {
 			this.post = clickCount;
-			console.log('The user 12321: ', clickCount); // Shows correct new user data
 		});
-		console.log('User outside eventbus:', this.post); // Shows empty user
 	},
 };
 </script>

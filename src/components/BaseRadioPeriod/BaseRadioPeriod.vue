@@ -1,8 +1,6 @@
 <template src="./index.html"></template>
 
 <script>
-import { EventBus } from '@/event-bus';
-
 export default {
 	name: 'BaseRadioPeriod',
 	data() {
@@ -50,7 +48,7 @@ export default {
 			this.$emit('input', value);
 			this.picked = value;
 			this.gotClicked = true;
-			EventBus.$emit('PaymentGotClicked', this.gotClicked);
+			// EventBus.$emit('PaymentGotClicked', this.gotClicked);
 		},
 	},
 

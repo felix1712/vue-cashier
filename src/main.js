@@ -5,11 +5,10 @@ import store from './store/index';
 import './registerServiceWorker';
 import customJs from '@/mixins/custom';
 import { currencyFilter } from '@/mixins/filter';
-import './event-bus';
-
 
 Vue.config.productionTip = false;
 Vue.filter('currencyFilter', currencyFilter);
+Vue.prototype.$eventBus = new Vue();
 
 new Vue({
 	mixins: [customJs],

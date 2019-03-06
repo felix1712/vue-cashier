@@ -2,7 +2,7 @@
 
 <script>
 import BaseLogo from '@/components/BaseLogo/BaseLogo.vue';
-import { EventBus } from '@/event-bus';
+// import EventBus from '@/event-bus';
 
 export default {
 	name: 'PaymentSidebar',
@@ -72,8 +72,7 @@ export default {
 		sendBankName(i, data) {
 			this.isActive = i;
 			this.dataToGo = data;
-			console.log('nama bank : ', data);
-			EventBus.$emit('i-got-clicked', data);
+			this.$eventBus.$emit('paymentMethodName', data);
 		},
 	},
 };
