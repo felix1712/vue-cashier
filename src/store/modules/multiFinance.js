@@ -32,7 +32,7 @@ export default {
 		},
 		updateMfPeriode(state, value) {
 			state.mfPeriod = value;
-			console.log(state.mfPeriod[0]);
+			console.log(state.mfPeriod);
 		},
 	},
 	actions: {

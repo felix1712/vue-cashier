@@ -5,8 +5,13 @@
                     <div class="row s-my-50" v-for="(item, index) in dummyMf" :key="index">
                         <BaseRadioPeriod :periodLabel="item.name" :radioValue="item.name" :radioChecked="mfModel" v-model="mfModel" :radioName="'virtualAccount'" :paymentMethod=true :periodPrice="'150,000'" :radioId="'multiFinance-'+item.id" :paymentImage="item.image">
                             <slot>
-                                <div class="col-12 wrapper-input s-p-5 " v-if="mfModel == item.name">
-                                <div class="col-4" v-for="(period, index) in dummyPeriods">
+                            	<div class="col-12 wrapper-input s-p-5 " v-if="mfModel == item.name">
+                            		<div class="col-12">
+                            			<div class="col-6"><p>Periode</p></div>
+                            			<div class="col-6 s-ta-r"><a>Lihat detail perbandinga</a></div>
+                            		</div>
+                                <div class="col-10">
+                                <div class="col-5" v-for="(period, index) in dummyPeriods">
                                         <BaseRadioPeriod
                                             :periodLabel="period.periodName"
                                             :periodPrice="period.periodPrice"
@@ -18,7 +23,8 @@
                                             v-model="mfPeriod"
                                         />
                                     </div>  
-                                </div>                       
+                                </div>  
+                                </div>                   
                             </slot>
                         </BaseRadioPeriod>
                     </div>

@@ -1,0 +1,43 @@
+<div id="itemCs">
+	<div class="row s-px-20">
+		<template>
+			<div class="col-12">
+				<div class="row s-my-50" v-for="(item, index) in dummyCs" :key="index">
+					<BaseRadioPeriod
+						:periodLabel="item.name" 
+						:radioValue="item.name" 
+						:radioChecked="csModel" 
+						:radioName="'convStoreRadio'" 
+						:paymentMethod=true 
+						:radioId="'convStore-'+item.id" 
+						:paymentImage="item.image"
+						v-model="csModel"
+					>
+						<slot>
+							<div 
+								class="col-12 wrapper-input s-p-5 slot-payment-method" 
+								:class="{'checked': csModel == item.name}"
+								v-if="csModel == item.name"
+							>
+								<div class="col-12">
+									<BaseFormGroup
+										class="s-pt-13"
+										:labelTitle="'Nomor Handphone'"
+										infoInputMessage="Informasi Bank Transfer akan dikirimkan melalui handphone dan email anda."
+									>
+										<input 
+											type="text" 
+											class="s-form-control"
+											v-model="csForm"
+											maxlength="11"
+										>
+									</BaseFormGroup> 
+								</div>
+							</div>
+						</slot>
+					</BaseRadioPeriod>
+				</div>
+			</div>
+		</template>
+	</div>
+</div>

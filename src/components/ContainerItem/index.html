@@ -10,10 +10,6 @@
 	<template v-if="post === 'VAccount'">
 		<ItemVa></ItemVa>
 	</template>
-
-	<template v-if="post === 'CStore'">
-		<csStore></csStore>
-	</template>
 	
 	<template v-if="post === 'MFinance' ">
 		<ItemMf />
@@ -23,5 +19,7 @@
 		<ItemBankTransfer></ItemBankTransfer>
 	</template>
 
-
+	<template v-if="post === 'CStore'">
+		<ItemCs />
+	</template>
 </div>

@@ -7,7 +7,7 @@ import ItemVa from '@/components/ItemVa/ItemVa.vue';
 import csStore from '@/components/ItemCsStore/ItemCsStore.vue';
 import ItemMf from '@/components/ItemMf/ItemMf.vue';
 import ItemBankTransfer from '@/components/ItemBankTransfer/ItemBankTransfer.vue';
-
+import ItemCs from '@/components/ItemCs/ItemCs.vue';
 
 export default {
 	name: 'ContainerItem',
@@ -18,6 +18,7 @@ export default {
 		csStore,
 		ItemMf,
 		ItemBankTransfer,
+		ItemCs,
 	},
 
 	data() {

@@ -69,10 +69,10 @@ export default {
 
 <style lang="scss" scoped>
 #itemVa {
-    .wrapper-input {
-        border: 1px solid #c91c23;
-        border-top:none;
-        height: 100%;
+	.wrapper-input {
+		border: 1px solid #c91c23;
+		border-top:none;
+		height: 100%;
 	}
 	.text-account-name {
 		font-size: 14px;

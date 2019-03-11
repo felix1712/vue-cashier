@@ -1,179 +1,169 @@
 <template src="./index.html"></template>
+
 <script>
 export default {
-  name: 'BaseRadioPeriod',
-  data() {
-    return {
-      picked: null,
-      gotClicked: undefined,
-    };
-  },
-  props: {
-    periodIst: {
-      required: false,
-    },
-    paymentMethod: { // dipakai di untuk gopay metode pembayaraan
-      required: false,
-    },
-    paymentImage: {
-      required: false,
-      type: String,
-    },
-    periodLabel: {
-      required: true,
-      type: String,
-    },
-    periodPrice: {
-      required: true,
-    },
-    radioId: {
-      required: true,
-    },
-    radioValue: {
-      required: true,
-    },
-    radioName: {
-      required: true,
-    },
-    radioDisabled: {
-      required: false,
-    },
-    color: String,
-    radioChecked: {},
-  },
+	name: 'BaseRadioPeriod',
+	data() {
+		return {
+			picked: null,
+			gotClicked: undefined,
+		};
+	},
+	props: {
+		periodIst: {
+			required: false,
+		},
+		paymentMethod: { // dipakai di untuk gopay metode pembayaraan
+			required: false,
+		},
+		paymentImage: {
+			required: false,
+			type: String,
+		},
+		periodLabel: {
+			required: true,
+			type: String,
+		},
+		periodPrice: {
+			required: false,
+		},
+		radioId: {
+			required: true,
+		},
+		radioValue: {
+			required: true,
+		},
+		radioName: {
+			required: true,
+		},
+		radioDisabled: {
+			required: false,
+		},
+		color: String,
+		radioChecked: {},
+	},
 
-  methods: {
-    radioChange(value) {
-      this.$emit('input', value);
-      this.picked = value;
-      this.gotClicked = true;
-      console.log('value:', value);
-      EventBus.$emit('PaymentGotClicked', value);
-    },
-  },
+	methods: {
+		radioChange(value) {
+			this.$emit('input', value);
+			this.picked = value;
+			this.gotClicked = true;
+		},
+	},
 
-  computed: {
-    stringRadioChecked() {
-      return String(this.radioChecked);
-    },
-    stringRadioValue() {
-      return String(this.radioValue);
-    },
-  },
+	computed: {
+		stringRadioChecked() {
+			return String(this.radioChecked);
+		},
+		stringRadioValue() {
+			return String(this.radioValue);
+		},
+	},
 };
-
 </script>
+
 <style lang="scss" scoped>
-@import "@/assets/styles/customs/_variable.scss";
+	@import "@/assets/styles/customs/_variable.scss";
 
-.custom-radio-gojek {
-  top: auto;
-  margin: 3%;
-}
+	.custom-radio-gojek {
+		top: auto;
+		margin: 3%;
+	}
 
-.custome-width {
-  width: 91% !important;
-}
+	.custome-width {
+		width: 91% !important;
+	}
+	.with-border-custom {
+		border-radius: 7px 7px 0px 0px !important;
+	}
+	.radio-period{
+		cursor: pointer;
+		color: $v-black;
+		border: $border-normal;
+		display: inline-block;
+		width: 100%;
+		border-radius: 7px;
+		transition: border .10s linear;
+		-webkit-transition: border .10s linear;
 
-.with-border-custom.checked {
-  border-radius: 7px 7px 0px 0px !important;
-}
+		label{
+			cursor: pointer;
+			margin-bottom: 0;
 
-.radio-period {
-  cursor: pointer;
-  color: $v-black;
-  border: $border-normal;
-  display: inline-block;
-  width: 100%;
-  border-radius: 7px;
-  transition: border .10s linear;
-  -webkit-transition: border .10s linear;
+			.label-frame{
+				padding: 15px;
+				display: inline-block;
+				width: 75%;
+				float: right;
+				border-left: $border-normal;
+				transition: border .10s linear;
+				-webkit-transition: border .10s linear;
 
-  label {
-    cursor: pointer;
-    margin-bottom: 0;
+				p, span, h5{
+					font-size: 0.8rem;
+				}
 
-    .label-frame {
-      padding: 15px;
-      display: inline-block;
-      width: 75%;
-      float: right;
-      border-left: $border-normal;
-      transition: border .10s linear;
-      -webkit-transition: border .10s linear;
+				h5{
+					margin: 0;
+				}
 
-      &.custom-frame {
-        width: 90%;
-        padding: 10px 15px;
-        span {
-          font-weight:700;
-        }
-        img {
-          vertical-align: middle;
-          height: 30px;
-        }
-      }
+				img{
+					height: auto;
+					width: 5.5rem;
+					vertical-align: middle;
+				}
+			}
 
-      p,
-      span,
-      h5 {
-        font-size: 0.8rem;
-      }
+			.radio-frame{
+				display: inline-block;
 
-      h5 {
-        margin: 0;
-      }
-    }
+				input[type="radio"]{
+					position: absolute;
+					visibility: hidden;
+				}
+			}
+		}
 
-    .radio-frame {
-      display: inline-block;
+		&:not(.disabled){
+			&:hover,
+			&.checked{
+				border: $border-red;
+				color: $v-red;
 
-      input[type="radio"] {
-        position: absolute;
-        visibility: hidden;
-      }
-    }
-  }
+				.label-frame{
+					border-left: $border-red;
+				}
 
-  &:not(.disabled) {
+				.custom-radio{
+					border: $border-red !important;
+				}
+			}
+		}
 
-    &:hover,
-    &.checked {
-      border: $border-red;
-      color: $v-red;
+		&.disabled{
+			color: $v-grey;
+			border: $border-disabled;
+			cursor: no-drop;
 
-      .label-frame {
-        border-left: $border-red;
+			label{
+				// cursor: no-drop;
+				pointer-events: none;
 
-        &.custom-frame {
-          width: 90%;
-        }
-      }
+				.label-frame{
+					border-left: $border-disabled;
+				}
+			}
 
-      .custom-radio {
-        border: $border-red !important;
-      }
-    }
-  }
+			.custom-radio{
+				border: $border-disabled;
+			}
+		}
+	}
 
-  &.disabled {
-    color: $v-grey;
-    border: $border-disabled;
-    cursor: no-drop;
-
-    label {
-      // cursor: no-drop;
-      pointer-events: none;
-
-      .label-frame {
-        border-left: $border-disabled;
-      }
-    }
-
-    .custom-radio {
-      border: $border-disabled;
-    }
-  }
-}
-
+	.slot-payment-method{
+		&.checked{
+			border: 1px solid red;
+			height: 100%;
+		}
+	}
 </style>
